@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../styles/globals.css";
+import "../../../styles/globals.css";
+import MenuNav from "@/components/menunav";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Silvidar",
+  title: "Shopping",
   description: "Timisoara Pet-Shop",
 };
 
@@ -17,8 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} text-sm text-stone-900 min-h-screen`}
+        className={`${inter.className} bg-white text-sm text-stone-900 flex flex-col max-w-full mx-auto px-4 min-h-screen`}
       >
+        <MenuNav />
         {children}
       </body>
     </html>
