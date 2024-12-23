@@ -1,13 +1,14 @@
 import MenuNav from "@/components/menunav";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col xl:flex-row min-h-screen items-center justify-center gap-5 bg-[radial-gradient(ellipse,#fff,#0F110C)] ">
+    <div className="flex flex-col xl:flex-row min-h-screen items-center justify-center gap-5 bg-[radial-gradient(ellipse,#fff,#0F110C)] ">
       <Image
-        src="https://cdn.dribbble.com/userupload/10143638/file/original-1447847c4bb2f88801de9c178a153e86.png?format=webp&resize=900x680&vertical=center"
+        src="https://cdn.dribbble.com/userupload/10455821/file/original-9176d60c7bdb636382f8c4f06ee09705.png"
         alt="Preview of PetSoft"
         width={609}
         height={502}
@@ -30,6 +31,6 @@ export default function Home() {
           </Button>
         </div>
       </aside>
-    </main>
+    </div>
   );
 }
