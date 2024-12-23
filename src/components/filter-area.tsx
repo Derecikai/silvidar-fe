@@ -19,7 +19,7 @@ import { Slider } from "@/components/ui/slider";
 export default function FilterArea() {
   const [pret, setPret] = useState(33);
   return (
-    <div className="lg:col-span-1 bg-gray-100 p-4 rounded shadow">
+    <div className="lg:col-span-1 bg-main-800 p-4 rounded shadow">
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>FILTRU</AccordionTrigger>

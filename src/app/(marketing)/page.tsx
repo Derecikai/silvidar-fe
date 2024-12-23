@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col xl:flex-row min-h-screen items-center justify-center gap-5 bg-[radial-gradient(ellipse,#fff,#0F110C)] ">
+    <div className="flex flex-col xl:flex-row min-h-screen items-center justify-center gap-5 bg-[radial-gradient(ellipse,#9d9fe6,#33343d)] ">
       <Image
         src="https://cdn.dribbble.com/userupload/10455821/file/original-9176d60c7bdb636382f8c4f06ee09705.png"
         alt="Preview of PetSoft"

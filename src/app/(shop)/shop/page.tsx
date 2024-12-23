@@ -44,7 +44,7 @@ export default function page() {
       className="w-[97%] mt-4 mx-auto bg-white min-h-screen grid grid-cols-1 lg:grid-cols-4 gap-4 p-4 "
       direction={direction === "vertical" ? "vertical" : "horizontal"}
     >
-      <ResizablePanel>
+      <ResizablePanel className="bg-main-800">
         <FilterArea />
       </ResizablePanel>
       <ResizableHandle withHandle />

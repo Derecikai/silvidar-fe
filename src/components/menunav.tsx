@@ -15,7 +15,7 @@ export default function MenuNav() {
   return (
     <div className="flex w-[97%] mx-auto ">
       {/* First menu bar */}
-      <NavigationMenu className="flex items-center justify-between min-w-full h-[65px] border-grey/90 border-b ">
+      <NavigationMenu className="flex items-center justify-between min-w-full h-[65px] border-zinc-200 border-b ">
         <Image
           src=" https://cdn.dribbble.com/userupload/14490438/file/original-ded17d5d4d81cebd39b3370426f3665d.jpg"
           alt="Preview of PetSoft"

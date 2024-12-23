@@ -12,7 +12,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 export default function MenuButtons() {
   return (
-    <nav className="flex gap-2 items-center mt-2">
+    <nav className="flex gap-4 items-center mt-2">
       <Menubar>
         <MenubarMenu>
           <MenubarTrigger>OFERTE</MenubarTrigger>
@@ -30,7 +30,7 @@ export default function MenuButtons() {
       </Menubar>
       <Menubar>
         <MenubarMenu>
-          <MenubarTrigger>NOUA COLECTIE</MenubarTrigger>
+          <MenubarTrigger>NOUA COLECȚIE</MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
               Magazin <MenubarShortcut>⌘T</MenubarShortcut>
