@@ -6,7 +6,7 @@ import MenuNav from "@/components/menunav";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Shopping",
+  title: "Silvidar - Produse",
   description: "Timisoara Pet-Shop",
 };
 

@@ -1,5 +1,5 @@
+"use client";
 import React, { useState } from "react";
-
 import { Roboto } from "@next/font/google";
 
 const roboto = Roboto({
@@ -39,6 +39,7 @@ export default function Searchbar() {
         }}
         value={searchText}
       />
+      <div className="w-[50px]"></div>
     </form>
   );
 }
