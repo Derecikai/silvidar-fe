@@ -50,7 +50,7 @@ export default function MenuNav() {
         <div className="flex items-center gap-[10px] w-50px mr-6">
           <Link
             className="hover:bg-main-700 hover:text-white rounded-[9px] p-2 transition-colors duration-300 ease-in-out"
-            href={"/profile"}
+            href={"/signup"}
           >
             {" "}
             <svg
@@ -91,27 +91,6 @@ export default function MenuNav() {
             </svg>
           </Link>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="flex flex-col md:hidden mt-2">
-            <MenuButtons />
-            <div className="flex flex-col items-start gap-[10px] w-full mt-2">
-              <Link
-                className="hover:bg-main-700 hover:text-white rounded-[9px] p-2 transition-colors duration-300 ease-in-out"
-                href={"/profile"}
-              >
-                Profile
-              </Link>
-              <Link
-                className="hover:bg-main-500 hover:text-main-600 rounded-[9px] p-2 transition-colors duration-300 ease-in-out"
-                href={"/profile"}
-              >
-                Cart
-              </Link>
-            </div>
-          </div>
-        )}
       </NavigationMenu>
     </div>
   );

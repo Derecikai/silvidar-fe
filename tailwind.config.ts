@@ -14,11 +14,6 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
       colors: {
         primary: {
           900: "#0C4733", // Hover
@@ -27,6 +22,7 @@ const config: Config = {
           100: "#EEF6F2",
         },
         main: {
+          400: "#ebecfa",
           500: "#9d9fe6",
           600: "#30303d",
           700: "#434352",
