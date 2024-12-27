@@ -6,6 +6,14 @@ import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 
+import { Roboto } from "@next/font/google";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400"], // Add weights as needed
+  style: ["normal"], // Add styles as needed
+});
+
 export default function MenuNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -14,7 +22,7 @@ export default function MenuNav() {
   };
 
   return (
-    <div className="flex w-[97%] mx-auto ">
+    <div className="flex w-[97%] mx-auto">
       {/* First menu bar */}
       <NavigationMenu className="flex items-center justify-between min-w-full h-[65px] border-zinc-200 border-b ">
         <Image
@@ -26,7 +34,7 @@ export default function MenuNav() {
         />
 
         <button
-          className="block md:hidden p-2 rounded bg-gray-200"
+          className="absolute right-[140px] block lg:hidden p-2  rounded bg-main-800"
           onClick={toggleMenu}
         >
           <svg
@@ -45,9 +53,9 @@ export default function MenuNav() {
           </svg>
         </button>
 
-        <MenuButtons />
+        <MenuButtons action="dekstop" />
 
-        <div className="flex items-center gap-[10px] w-50px mr-6">
+        <div className=" flex items-center gap-[10px] w-50px mr-6">
           <Link
             className="hover:bg-main-700 hover:text-white rounded-[9px] p-2 transition-colors duration-300 ease-in-out"
             href={"/signup"}
@@ -91,6 +99,17 @@ export default function MenuNav() {
             </svg>
           </Link>
         </div>
+
+        {isMenuOpen && (
+          <div
+            className={`absolute lg:hidden bg-white w-full h-[120px] top-[60px] rounded-md right-0 transform transition-transform ${
+              isMenuOpen ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ transition: "transform 0.3s ease , opacity 0.3s ease " }}
+          >
+            <MenuButtons action="mobile" />
+          </div>
+        )}
       </NavigationMenu>
     </div>
   );

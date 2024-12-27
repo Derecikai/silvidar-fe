@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} text-sm text-stone-900 min-h-screen bg-gradient-to-tr from-main-500 to-main-500/50 flex items-center `}
+        className={`${inter.className} text-sm text-stone-900 min-h-screen bg-gradient-to-tr from-main-500 to-main-500/40 flex items-center `}
       >
         {children}
       </body>

@@ -10,9 +10,20 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { Separator } from "@/components/ui/separator";
-export default function MenuButtons() {
+
+export default function MenuButtons({
+  action,
+}: {
+  action: "dekstop" | "mobile";
+}) {
   return (
-    <nav className="flex flex-col lg:flex-row gap-4 items-center mt-2 ml-[30px]">
+    <nav
+      className={
+        action === "dekstop"
+          ? "hidden lg:flex lg:flex-row gap-4 items-center mt-2 lg:ml-[30px]"
+          : "flex flex-col w-full lg:hidden"
+      }
+    >
       <Menubar>
         <MenubarMenu>
           <MenubarTrigger>OFERTE</MenubarTrigger>
