@@ -24,7 +24,7 @@ export default function Home() {
         height={502}
         className="rounded-xl"
       />
-      {/* <Separator className="w-[70%] h-[1px] lg:h-[200px]  lg:w-[1px] text-white" /> */}
+      <Separator className="w-[70%] h-[1px] lg:h-[200px]  lg:w-[1px] text-white" />
       <aside className="flex flex-col justify-center align-center p-6 xl:p-0">
         <h1 className={`text-5xl font-semibold my-6 max-w-[500px]`}>
           <span className="font-extrabold"> Pet-shop Silvidar Timisoara</span>{" "}

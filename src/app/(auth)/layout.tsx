@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description: "Timisoara Pet-Shop",
 };
 
+// bg-gradient-to-tr from-main-500/60 to-main-700/20
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -16,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} text-sm text-stone-900 min-h-screen bg-gradient-to-tr from-main-500 to-main-500/40 flex items-center `}
+        className={`${inter.className} text-sm text-stone-900 min-h-screen
+        
+          bg-main-500
+         backdrop-blur-md flex items-center `}
       >
         {children}
       </body>

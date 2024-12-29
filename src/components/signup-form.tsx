@@ -8,7 +8,7 @@ export default function SignUpForm() {
   return (
     <form className="flex flex-col gap-5 mt-[15px] w-full p-3 lg:p-0 lg:w-[400px] h-full">
       <div>
-        <Label htmlFor="name">Username</Label>
+        <Label htmlFor="name">Nume</Label>
         <Input className="mt-2" id="name"></Input>
       </div>
 
@@ -18,12 +18,12 @@ export default function SignUpForm() {
       </div>
 
       <div>
-        <Label htmlFor="password">Password</Label>
+        <Label htmlFor="password">Parola</Label>
         <Input className="mt-2" type="password" id="password"></Input>
       </div>
 
       <div>
-        <Label htmlFor="confirmPassword">ConfirmPassword</Label>
+        <Label htmlFor="confirmPassword">Confirmă Parola</Label>
         <Input className="mt-2" type="password" id="confirmPassword"></Input>
       </div>
       <Button className="w-full mt-[20px] bg-main-600 hover:bg-main-600/80">

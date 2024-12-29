@@ -12,7 +12,7 @@ const roboto = Roboto({
 
 export default function SignUp() {
   return (
-    <div className="bg-gradient-to-tr from-main-800 to-white shadow-lg flex flex-col  items-center rounded-xl w-[99%] lg:w-[500px] my-auto mx-auto h-[600px]">
+    <div className="bg-gradient-to-tr from-main-800 to-white shadow-lg flex flex-col  items-center rounded-xl w-[97%] lg:w-[500px] my-auto mx-auto h-[600px]">
       <h1
         className={`${roboto.className} mt-[40px] mb-4 text-center text-3xl text-main-600 `}
       >

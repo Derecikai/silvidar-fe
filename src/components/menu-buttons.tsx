@@ -21,12 +21,14 @@ export default function MenuButtons({
       className={
         action === "dekstop"
           ? "hidden lg:flex lg:flex-row gap-4 items-center mt-2 lg:ml-[30px]"
-          : "flex flex-col w-full lg:hidden"
+          : "flex flex-col w-full lg:hidden bg-white"
       }
     >
       <Menubar>
         <MenubarMenu>
-          <MenubarTrigger>OFERTE</MenubarTrigger>
+          <MenubarTrigger className={`${action === "mobile" ? "mb-5px" : ""}`}>
+            OFERTE
+          </MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
               Caini <MenubarShortcut>⌘T</MenubarShortcut>
