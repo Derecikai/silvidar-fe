@@ -4,6 +4,7 @@ import "../../../styles/globals.css";
 import MenuNav from "@/components/menunav";
 import { Separator } from "@/components/ui/separator";
 import ScrollContextProvider from "@/app/contexts/scrollbar-context";
+import FilterAreaMobile from "@/components/filter-area-mobile";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,13 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} relative text-sm text-stone-900 flex flex-col min-w-full mx-auto px-4 min-h-screen`}
+        className={`relative text-sm text-stone-900 flex flex-col mx-auto px-4 min-h-screen`}
       >
         <ScrollContextProvider>
           <MenuNav />
+
+          {children}
+          <Separator className="absolute top-8 mt-9 w-[97%] ml-[5px] lg:ml-5 bg-zinc-200" />
         </ScrollContextProvider>
-        {children}
-        <Separator className="absolute top-8 mt-9 w-[97%] ml-[5px] lg:ml-5 bg-zinc-200" />
       </body>
     </html>
   );

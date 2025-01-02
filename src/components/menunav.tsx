@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 
 import { Roboto } from "@next/font/google";
 import { useScrollContext } from "@/lib/hooks";
+import { useRouter } from "next/router";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -29,7 +30,7 @@ export default function MenuNav() {
     <NavigationMenu
       className={`sticky top-0 bg-white h-[65px] flex items-center justify-between min-w-full  rounded-bl-md rounded-br-md ${
         isScrolled
-          ? "transition-all ease-in-out bg-gradient-to-r from-main-500/60 to-main-900/80 h-[60px] "
+          ? "transition-all ease-in-out bg-gradient-to-r from-main-500/80 to-main-900/80 h-[60px] "
           : ""
       }`}
     >
