@@ -20,9 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`relative text-sm text-stone-900 flex flex-col mx-auto px-4 min-h-screen`}
-      >
+      <body>
         <ScrollContextProvider>
           <MenuNav />
 

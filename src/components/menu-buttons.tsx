@@ -20,7 +20,7 @@ export default function MenuButtons({
     <nav
       className={
         action === "dekstop"
-          ? "hidden lg:flex lg:flex-row gap-4 items-center mt-2 lg:ml-[30px]"
+          ? "hidden lg:flex lg:flex-row lg:text-sm gap-4 items-center mt-2 lg:ml-[30px]"
           : "flex flex-col w-full lg:hidden bg-white"
       }
     >

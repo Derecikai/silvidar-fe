@@ -19,7 +19,7 @@ const roboto = Roboto({
 export default function FilterAreaMobile() {
   return (
     <Sheet>
-      <SheetTrigger className=" sticky top-20 max-w-[42px]  lg:hidden bg-main-800 p-2 rounded-lg hover:cursor-pointer mr-10 border-[2px] border-main-500 hover:border-main-900">
+      <SheetTrigger className="flex justify-center sticky top-20 max-w-[42px]  lg:hidden bg-main-800 p-2 rounded-lg hover:cursor-pointer border-[2px] border-main-500 hover:border-main-900">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

@@ -10,12 +10,6 @@ import { Roboto } from "@next/font/google";
 import { useScrollContext } from "@/lib/hooks";
 import { useRouter } from "next/router";
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400"], // Add weights as needed
-  style: ["normal"], // Add styles as needed
-});
-
 export default function MenuNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isScrolled } = useScrollContext();
@@ -28,9 +22,9 @@ export default function MenuNav() {
 
   return (
     <NavigationMenu
-      className={`sticky top-0 bg-white h-[65px] flex items-center justify-between min-w-full  rounded-bl-md rounded-br-md ${
+      className={` sticky top-0 bg-white h-[65px] text-sm flex items-center justify-between min-w-full  rounded-bl-md rounded-br-md ${
         isScrolled
-          ? "transition-all ease-in-out bg-gradient-to-r from-main-500/80 to-main-900/80 h-[60px] "
+          ? "transition-all ease-in-out bg-gradient-to-l from-main-500/90 to-main-900/10 h-[60px] backdrop-blur-none"
           : ""
       }`}
     >
@@ -43,7 +37,7 @@ export default function MenuNav() {
       />
 
       <button
-        className="absolute right-[140px] block lg:hidden p-2  rounded bg-main-800"
+        className="absolute right-[140px] block lg:hidden p-2  rounded bg-main-800/30"
         onClick={toggleMenu}
       >
         <svg
@@ -52,7 +46,7 @@ export default function MenuNav() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-6 h-6 "
         >
           <path
             strokeLinecap="round"
@@ -66,7 +60,7 @@ export default function MenuNav() {
 
       <div className=" flex items-center gap-[10px] w-50px mr-6">
         <Link
-          className="hover:bg-main-700 hover:text-white rounded-[9px] p-2 transition-colors duration-300 ease-in-out"
+          className="hover:bg-main-700 hover:text-main-400 rounded-[9px] p-2 transition-colors duration-300 ease-in-out"
           href={"/signup"}
         >
           {" "}
@@ -89,7 +83,7 @@ export default function MenuNav() {
         <Separator className="h-[20px]" orientation="vertical" />
 
         <Link
-          className="hover:bg-main-500 hover:text-main-600 rounded-[9px] p-2 transition-colors duration-300 ease-in-out"
+          className="hover:bg-main-900 hover:text-main-600 rounded-[9px] p-2 transition-colors duration-300 ease-in-out"
           href={"/profile"}
         >
           <svg

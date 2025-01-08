@@ -3,6 +3,7 @@ import SignUpForm from "@/components/signup-form";
 import React from "react";
 
 import { Roboto } from "@next/font/google";
+import LoginForm from "@/components/login-from";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -16,9 +17,9 @@ export default function SignUp() {
       <h1
         className={`${roboto.className} mt-[40px] mb-4 text-center text-3xl text-main-600 `}
       >
-        Creează Cont
+        Conectează-te
       </h1>
-      <SignUpForm />
+      <LoginForm />
     </div>
   );
 }
