@@ -4,6 +4,7 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { Roboto } from "@next/font/google";
+import { Separator } from "./ui/separator";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -35,9 +36,10 @@ export default function SignUpForm() {
         <Label htmlFor="confirmPassword">Confirmă Parola</Label>
         <Input className="mt-2" type="password" id="confirmPassword"></Input>
       </div>
-      <Button className="w-full mt-[20px] bg-main-600 hover:bg-main-600/80">
+      <Button className="tracking-wider w-full mt-[20px] bg-main-600 hover:bg-main-600/80">
         Creează
       </Button>
+      <Separator className="bg-zinc-200" />
       <p className="text-sm self-center text-main-700">
         Ai deja cont,{" "}
         <span className="italic text-center text-main-500">

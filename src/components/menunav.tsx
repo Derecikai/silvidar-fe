@@ -22,9 +22,9 @@ export default function MenuNav() {
 
   return (
     <NavigationMenu
-      className={` sticky top-0 bg-white h-[65px] text-sm flex items-center justify-between min-w-full  rounded-bl-md rounded-br-md ${
+      className={`sticky top-0 bg-white h-[65px] text-sm flex items-center justify-between min-w-full rounded-bl-md rounded-br-md ${
         isScrolled
-          ? "transition-all ease-in-out bg-gradient-to-l from-main-500/90 to-main-900/10 h-[60px] backdrop-blur-none"
+          ? "transition-all ease-in-out bg-gradient-to-l from-main-500/35 to-main-900/35  h-[60px] backdrop-blur-md shadow-md"
           : ""
       }`}
     >
