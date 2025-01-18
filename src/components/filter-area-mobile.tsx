@@ -7,6 +7,15 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 import FilterArea from "./filter-area";
 import { Roboto } from "@next/font/google";
@@ -46,7 +55,21 @@ export default function FilterAreaMobile() {
             FILTRU
           </SheetTitle>
           <SheetDescription>
-            <FilterArea />
+            <Select>
+              <SelectTrigger>
+                <SelectValue placeholder="Alege firma" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Firme</SelectLabel>
+                  <SelectItem value="apple">Apple</SelectItem>
+                  <SelectItem value="banana">Banana</SelectItem>
+                  <SelectItem value="blueberry">Blueberry</SelectItem>
+                  <SelectItem value="grapes">Grapes</SelectItem>
+                  <SelectItem value="pineapple">Pineapple</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
           </SheetDescription>
         </SheetHeader>
       </SheetContent>

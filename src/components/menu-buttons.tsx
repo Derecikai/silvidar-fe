@@ -10,6 +10,7 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 export default function MenuButtons({
   action,
@@ -45,9 +46,16 @@ export default function MenuButtons({
         <MenubarMenu>
           <MenubarTrigger>NOUA COLECȚIE</MenubarTrigger>
           <MenubarContent>
-            <MenubarItem>
-              Magazin <MenubarShortcut>⌘T</MenubarShortcut>
-            </MenubarItem>
+            <Link href={"/home"}>
+              <MenubarItem>
+                Acasă
+                <MenubarShortcut>⌘T</MenubarShortcut>
+              </MenubarItem>
+            </Link>{" "}
+            <MenubarSeparator />
+            <Link href={"/shop"}>
+              <MenubarItem>Magazin</MenubarItem>
+            </Link>{" "}
           </MenubarContent>{" "}
         </MenubarMenu>
       </Menubar>
