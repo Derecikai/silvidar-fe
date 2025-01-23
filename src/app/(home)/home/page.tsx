@@ -15,7 +15,7 @@ export default function page() {
       <div className="flex items-center w-[97%] mx-auto mt-3 lg:my-4">
         <Separator className="flex-1 bg-main-500" />
         <h2
-          className={`${roboto.className} lg:p-3 text-main-600 lg:text-7xl text-3xl border-main-500 rounded-lg`}
+          className={`${roboto.className} lg:p-3 text-main-600/70 lg:text-7xl text-3xl border-main-500 rounded-lg`}
         >
           GHID DE UTILIZARE
         </h2>
@@ -26,7 +26,7 @@ export default function page() {
       <div className="flex items-center w-[97%] mx-auto  mt-3 lg:my-6">
         <Separator className="flex-1 bg-main-500" />
         <h2
-          className={`${roboto.className} lg:p-3 text-main-600 lg:text-7xl text-3xl border-main-500 rounded-lg`}
+          className={`${roboto.className} lg:p-3 text-main-600/70 lg:text-7xl text-3xl border-main-500 rounded-lg`}
         >
           POPULARE
         </h2>

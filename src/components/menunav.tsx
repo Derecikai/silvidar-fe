@@ -22,9 +22,9 @@ export default function MenuNav() {
 
   return (
     <NavigationMenu
-      className={`sticky top-0 bg-white h-[65px] text-sm flex items-center justify-between min-w-full rounded-bl-md rounded-br-md ${
+      className={`sticky text-main-600 top-0 bg-white h-[65px] text-sm flex items-center justify-between min-w-full rounded-bl-md rounded-br-md ${
         isScrolled
-          ? "transition-all ease-in-out bg-gradient-to-l from-main-500/35 to-main-900/35  h-[60px] backdrop-blur-md shadow-md"
+          ? "transition-all ease-in-out bg-gradient-to-l from-main-500/35 to-main-900/35  h-[60px] backdrop-blur-md shadow-md text-main-600"
           : ""
       }`}
     >
@@ -83,7 +83,7 @@ export default function MenuNav() {
         <Separator className="h-[20px]" orientation="vertical" />
 
         <Link
-          className="hover:bg-main-900 hover:text-main-600 rounded-[9px] p-2 transition-colors duration-300 ease-in-out"
+          className="hover:bg-white hover:text-main-600 rounded-[9px] p-2 transition-colors duration-300 ease-in-out"
           href={"/profile"}
         >
           <svg
@@ -105,7 +105,7 @@ export default function MenuNav() {
 
       {isMenuOpen && (
         <div
-          className={`absolute lg:hidden bg-white w-full top-[57px] rounded-md right-0 overflow-hidden transition-all duration-500 ease-in-out`}
+          className={`absolute lg:hidden z-20 bg-white w-full top-[57px] rounded-md right-0 overflow-hidden transition-all duration-500 ease-in-out`}
           style={{
             maxHeight: isMenuOpen ? "200px" : "0px",
             opacity: isMenuOpen ? 1 : 0,

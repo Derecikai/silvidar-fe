@@ -5,6 +5,7 @@ import MenuNav from "@/components/menunav";
 import { Separator } from "@/components/ui/separator";
 import ScrollContextProvider from "@/app/contexts/scrollbar-context";
 import FilterAreaMobile from "@/components/filter-area-mobile";
+import PetFoodContextProvider from "@/app/contexts/petFood-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   description: "Timisoara Pet-Shop",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

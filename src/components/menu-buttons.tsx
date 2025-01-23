@@ -25,7 +25,7 @@ export default function MenuButtons({
           : "flex flex-col w-full lg:hidden bg-white"
       }
     >
-      <Menubar>
+      <Menubar className="z-50">
         <MenubarMenu>
           <MenubarTrigger className={`${action === "mobile" ? "mb-5px" : ""}`}>
             OFERTE
@@ -44,7 +44,7 @@ export default function MenuButtons({
       </Menubar>
       <Menubar>
         <MenubarMenu>
-          <MenubarTrigger>NOUA COLECȚIE</MenubarTrigger>
+          <MenubarTrigger className="z-50">NOUA COLECȚIE</MenubarTrigger>
           <MenubarContent>
             <Link href={"/home"}>
               <MenubarItem>
