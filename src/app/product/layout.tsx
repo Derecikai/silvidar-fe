@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../../../styles/globals.css";
+import "../../styles/globals.css";
 import MenuNav from "@/components/menunav";
 import { Separator } from "@/components/ui/separator";
 import ScrollContextProvider from "@/app/contexts/scrollbar-context";

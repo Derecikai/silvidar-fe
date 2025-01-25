@@ -47,6 +47,9 @@ export default function RealCarusel() {
                   alt="firstphto"
                   width={1800}
                   height={1050}
+                  quality={100} // Set the image quality (0–100)
+                  layout="responsive" // Makes the image responsive
+                  objectFit="cover"
                 />
               </CardContent>
             </Card>

@@ -23,7 +23,10 @@ type ProductItemProps = {
 
 export default function ProductItem({ data }: ProductItemProps) {
   return (
-    <Link href={""} className={` rounded-md relative bg-white `}>
+    <Link
+      href={`/product?id=${data.id}`}
+      className={` rounded-md relative bg-white `}
+    >
       <Image
         className="w-full bg-cover min-h-[330px]  rounded-md"
         src={data.imageUrl}
