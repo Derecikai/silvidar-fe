@@ -4,6 +4,7 @@ import "../../../styles/globals.css";
 import MenuNav from "@/components/menunav";
 import { Separator } from "@/components/ui/separator";
 import ScrollContextProvider from "@/app/contexts/scrollbar-context";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Silvidar - Produse",
@@ -23,6 +24,7 @@ export default async function RootLayout({
 
           {children}
           <Separator className="absolute top-8 mt-9 w-[97%] ml-[5px] lg:ml-5 bg-zinc-200" />
+          <Footer />
         </ScrollContextProvider>
       </body>
     </html>

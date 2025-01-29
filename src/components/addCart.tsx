@@ -10,11 +10,10 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Inter, Roboto } from "next/font/google";
+import ButtonShop from "./button-shop";
 
-import { Inter } from "next/font/google";
-
-const roboto = Inter({
+const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400"], // Add weights as needed
   style: ["normal"], // Add styles as needed
@@ -25,76 +24,50 @@ export default function AddCart({
 }: {
   productData: TPetFoodData;
 }) {
-  console.log("THIS IS PRODUCTDATA!!!!!!!!: ", productData);
-
   return (
-    <Tabs defaultValue="account" className="w-full lg:p-3">
-      <TabsList className="grid w-full grid-cols-2">
-        <TabsTrigger value="account">Sac</TabsTrigger>
-        <TabsTrigger value="password">Kilogram</TabsTrigger>
-      </TabsList>
-      <TabsContent value="account">
-        <Card>
-          <CardHeader>
-            <CardTitle
-              className={`${roboto.className.toUpperCase()} text-3xl lg:text-4xl text-main-600/90`}
-            >
-              {productData.name}
-            </CardTitle>
-            <CardDescription
-              className={`${roboto.className.toUpperCase()} text-lg text-main-700/70`}
-            >
-              {productData.description}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="name">Name</Label>
-              <Input
-                id="name"
-                className="lg:w-[60%] lg:mx-auto"
-                defaultValue="Pedro Duarte"
-              />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="username">Username</Label>
-              <Input
-                className="lg:w-[60%] lg:mx-auto"
-                id="username"
-                defaultValue="@peduarte"
-              />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button className="bg-main-700 hover:bg-main-700/80">
-              Adauga în coș
-            </Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-      <TabsContent value="password">
-        <Card>
-          <CardHeader>
-            <CardTitle>Password</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, you'll be logged out.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="current">Current password</Label>
-              <Input id="current" type="password" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="new">New password</Label>
-              <Input id="new" type="password" />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button className="bg-main-700">Save password</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-    </Tabs>
+    <div className="w-full lg:p-3  rounded-md">
+      <Card className="mt-2 bg-white/60 lg:mt-0">
+        <CardHeader>
+          <CardTitle
+            className={`${roboto.className} text-3xl lg:text-4xl text-main-600`}
+          >
+            {productData.name}
+          </CardTitle>
+          <CardDescription
+            className={`${roboto.className} text-2xl text-main-700/70`}
+          >
+            {productData.description}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-5">
+          <h1 className="text-4xl">{productData.price} RON</h1>
+          <p className={`${roboto.className} text-xl text-main-600`}>
+            Tip de mâncare:
+          </p>
+          <ButtonShop>{productData.foodType.toUpperCase()}</ButtonShop>
+          <p className={`${roboto.className} text-xl text-main-600`}>Brand:</p>
+          <ButtonShop>VERSELE-LAGA</ButtonShop>
+          <p className={`${roboto.className} text-xl text-main-600`}>
+            Cantitate:
+          </p>
+          <ButtonShop>{productData.quantity}</ButtonShop>
+          <p className={`${roboto.className} text-xl text-main-600`}>Stoc</p>
+          <Button
+            className={`bg-main-400 border w-full mx-auto ${
+              productData.quantity > 0 ? "border-main-300" : "border-rose-500"
+            } text-main-700 hover:bg-main-400 cursor-default`}
+          >
+            {productData.quantity === 0
+              ? "Stoc Indisponibil"
+              : "Produs Disponibil in stoc"}
+          </Button>
+        </CardContent>
+        <CardFooter>
+          <Button className="bg-main-600 hover:bg-main-700/80">
+            Adauga în coș
+          </Button>
+        </CardFooter>
+      </Card>
+    </div>
   );
 }

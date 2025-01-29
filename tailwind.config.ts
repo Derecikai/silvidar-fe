@@ -24,8 +24,12 @@ const config: Config = {
           800: "#0C4733", // Primary color
           700: "#4E9C79",
           100: "#EEF6F2",
+          200: "#f9f9f9",
+          300: "#efefef",
         },
         main: {
+          300: "#38d9a9",
+          200: "#9d9fe6",
           400: "#ebecfa",
           500: "#9d9fe6",
           600: "#30303d",
