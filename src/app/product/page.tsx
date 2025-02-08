@@ -32,10 +32,10 @@ export default async function page({
         <ProductDetails data={ProductData} />
       </div>
       {/* Right section - appears second */}
-      <div className="md:col-span-1 md:row-span-1 bg-white p-4 rounded-lg  h-[100%]"></div>
+      {/* <div className="md:col-span-1 md:row-span-1 bg-rose-950 p-4 rounded-lg  h-[100%]"></div> */}
 
       {/* Bottom right */}
-      <div className="md:col-span-2 bg-white p-4 rounded-lg h-[100%]">
+      <div className="md:col-start-2 md:col-end-4 bg-white p-4 rounded-lg h-[100%]">
         <PricesArea data={ProductData} />
       </div>
     </div>

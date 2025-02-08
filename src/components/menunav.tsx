@@ -24,14 +24,14 @@ export default function MenuNav() {
     <NavigationMenu
       className={`sticky text-main-600 top-0 bg-white h-[65px] text-sm flex items-center justify-between min-w-full rounded-bl-md rounded-br-md ${
         isScrolled
-          ? "transition-all ease-in-out bg-gradient-to-l from-main-500/35 to-main-900/35  h-[60px] backdrop-blur-md shadow-md text-main-600"
+          ? "transition-all ease-in-out bg-white/40  h-[60px] backdrop-blur-md shadow-md text-main-600"
           : ""
       }`}
     >
       <Image
         src=" https://cdn.dribbble.com/userupload/14490438/file/original-ded17d5d4d81cebd39b3370426f3665d.jpg"
         alt="Preview of PetSoft"
-        className={`${isScrolled ? "ml-4" : "ml-4"} rounded-lg`}
+        className={`${isScrolled ? "ml-4" : "ml-4"} rounded-[40%]`}
         width={60}
         height={60}
       />
@@ -84,7 +84,7 @@ export default function MenuNav() {
 
         <Link
           className="hover:bg-white hover:text-main-600 rounded-[9px] p-2 transition-colors duration-300 ease-in-out"
-          href={"/profile"}
+          href={"/cart"}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

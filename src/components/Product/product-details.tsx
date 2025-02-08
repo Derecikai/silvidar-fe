@@ -13,6 +13,7 @@ import ButtonShop from "../button-shop";
 import ButtonShop2 from "../ButtonShopBig/button-shop2";
 import ButtonShop3 from "../ButtonShopBig/button-shop-short";
 import ButtonShop4 from "../ButtonShopBig/button-shop4";
+import { Separator } from "../ui/separator";
 
 const roboto = Inter({
   subsets: ["latin"],
@@ -73,35 +74,39 @@ export default function ProductDetails({ data }: { data: TPetFoodData }) {
             hic commodi veritatis debitis ullam dolorum et animi molestiae
             culpa! Obcaecati?
           </ButtonShop2>
-          <section className="flex flex-col md:flex-row md:justify-around w-full mt-10">
-            <div>
-              <p className={`${roboto.className} text-base text-main-600`}>
-                Tip Boaba
-              </p>
-              <p
-                className={`${roboto.className} text-[13px] text-main-700/60 mb-5`}
-              >
-                Boabele de mancare din care sacul este alcatuit
-              </p>
+          <section className="flex flex-col  md:justify-around w-full mt-10">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+              <div>
+                <p className={`${roboto.className} text-base text-main-600`}>
+                  Tip Boaba
+                </p>
+                <p
+                  className={`${roboto.className} text-[13px] text-main-700/60 mb-5`}
+                >
+                  Boabele de mancare din care sacul este alcatuit
+                </p>
+              </div>
               <Button className="bg-main-700 hover:bg-main-700 rounded-[5px] cursor-default">
-                {data.foodType === "Dry" ? "USCAT" : "UMED"}
+                {data.foodType === "Dry" ? "Uscat" : "Umed"}
               </Button>
             </div>
-            <div>
-              <p
-                className={`${roboto.className} text-base text-main-600 mt-6 md:mt-0`}
-              >
-                Firma
-              </p>
-              <p
-                className={`${roboto.className} text-[13px] text-main-700/60 mb-5`}
-              >
-                Firma produsului
-              </p>
-              <Button className="bg-main-700 hover:bg-main-700 rounded-[5px] cursor-default">
-                Versele-Laga
-              </Button>
+            <Separator className="my-3 bg-main-700/20" />
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+              <div className="flex flex-col">
+                <p
+                  className={`${roboto.className} text-base text-main-600 mt-6 md:mt-0`}
+                >
+                  Firma
+                </p>
+                <p
+                  className={`${roboto.className} text-[13px] text-main-700/60 mb-5`}
+                >
+                  Firma produsului
+                </p>
+              </div>
+              <ButtonShop4>Versele-Laga</ButtonShop4>
             </div>
+            <Separator className="my-3 bg-main-700/20" />
           </section>
         </CardContent>
       </Card>
