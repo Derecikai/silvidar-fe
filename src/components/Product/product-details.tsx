@@ -23,7 +23,7 @@ const roboto = Inter({
 
 export default function ProductDetails({ data }: { data: TPetFoodData }) {
   return (
-    <div>
+    <div className="shadow-lg">
       <div className="flex items-center bg-main-700 p-1 rounded-[5px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -61,6 +61,7 @@ export default function ProductDetails({ data }: { data: TPetFoodData }) {
             Nume Produs
           </p>
           <ButtonShop>{data.name}</ButtonShop>
+
           <p
             className={`${roboto.className} text-base text-main-600 mt-6 mb-2 `}
           >
@@ -96,7 +97,7 @@ export default function ProductDetails({ data }: { data: TPetFoodData }) {
                 <p
                   className={`${roboto.className} text-base text-main-600 mt-6 md:mt-0`}
                 >
-                  Firma
+                  Firmă
                 </p>
                 <p
                   className={`${roboto.className} text-[13px] text-main-700/60 mb-5`}
@@ -105,6 +106,22 @@ export default function ProductDetails({ data }: { data: TPetFoodData }) {
                 </p>
               </div>
               <ButtonShop4>Versele-Laga</ButtonShop4>
+            </div>
+            <Separator className="my-3 bg-main-700/20" />
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+              <div className="flex flex-col">
+                <p
+                  className={`${roboto.className} text-base text-main-600 mt-6 md:mt-0`}
+                >
+                  Kilograme Sac
+                </p>
+                <p
+                  className={`${roboto.className} text-[13px] text-main-700/60 mt-1 mb-2`}
+                >
+                  Kilograme cate are sacul din magazin
+                </p>
+              </div>
+              <ButtonShop4>12 Kg</ButtonShop4>
             </div>
             <Separator className="my-3 bg-main-700/20" />
           </section>

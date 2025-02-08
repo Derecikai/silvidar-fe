@@ -32,7 +32,7 @@ const roboto = Inter({
 export default function PricesArea({ data }: { data: TPetFoodData }) {
   return (
     <section className="w-full">
-      <Card className="w-[100%] mx-auto bg-primary-200">
+      <Card className="w-[100%] shadow-lg mx-auto bg-primary-200">
         <CardHeader>
           <CardTitle
             className={`${roboto.className} text-[22px] text-main-600`}
@@ -48,7 +48,7 @@ export default function PricesArea({ data }: { data: TPetFoodData }) {
             <p
               className={`${roboto.className} text-base text-main-600 mb-2 min-w-[50%]`}
             >
-              Pret Kilogram
+              Preț Kilogram
             </p>
             <ButtonShop4 className=""> {data.price} RON</ButtonShop4>
           </div>
@@ -57,7 +57,7 @@ export default function PricesArea({ data }: { data: TPetFoodData }) {
             <p
               className={`${roboto.className} text-base text-main-600 mb-2 min-w-[50%]`}
             >
-              Pret Sac
+              Preț Sac
             </p>
             <ButtonShop4 className="">
               {data.price * (data.weight / 100)} RON

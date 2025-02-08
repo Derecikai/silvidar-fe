@@ -23,7 +23,7 @@ export default function ImageProductSection({ data }: { data: TPetFoodData }) {
         layout="responsive" // Makes the image responsive
         objectFit="cover"
       />
-      <Button className="mt-5 relative rounded-[5px] text-main-600 bg-main-300 hover:bg-main-300/80">
+      <Button className="mt-5 relative rounded-[5px] text-main-600 bg-main-500 hover:bg-main-500/80">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

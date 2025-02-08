@@ -25,10 +25,10 @@ export default async function page({
   return (
     <div className="flex flex-col md:grid md:grid-cols-3 gap-4 p-4 min-h-screen w-[100%] md:w-[86%] mx-auto">
       {/* Left section - appears first */}
-      <div className="md:col-span-1 md:sticky md:top-14 md:row-span-3 bg-primary-200 p-4 rounded-lg h-[100%]">
+      <div className=" md:sticky md:top-14 md:row-span-3 bg-primary-200 p-4 rounded-lg h-[97%]">
         <ImageProductSection data={ProductData} />
       </div>
-      <div className="md:col-span-2 md:row-span-3 bg-white p-4 rounded-lg  min-h-full">
+      <div className="md:col-span-2 md:row-span-3 bg-white p-4 rounded-lg min-h-full">
         <ProductDetails data={ProductData} />
       </div>
       {/* Right section - appears second */}
