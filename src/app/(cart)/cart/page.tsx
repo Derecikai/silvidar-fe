@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import { Inter } from "@next/font/google";
 import CartDetails from "@/components/CartComponents/cartDetails";
 import RightCartDetails from "@/components/CartComponents/right-cart-details";
+import { useCartContext } from "@/lib/hooks";
 
 const roboto = Inter({
   subsets: ["latin"],
@@ -10,6 +12,7 @@ const roboto = Inter({
 });
 
 export default function page() {
+  const { cartData } = useCartContext();
   return (
     <div className="w-[100%] min-h-screen flex flex-col md:flex-row">
       <div className="flex flex-col items-center min-w-[70%] bg-main-800">
@@ -19,13 +22,15 @@ export default function page() {
         <p
           className={`${roboto.className} self-start text-xl text-main-700/60 mt-2 pl-7`}
         >
-          <span className="text-main-600/70 font-bold">2 Produse</span> in
-          inventar
+          <span className="text-main-600/70 font-bold">
+            {cartData.length} Produse
+          </span>{" "}
+          in inventar
         </p>
         <CartDetails />
       </div>
-      <div className=" min-w-[30%] bg-main-800 flex items-center justify-center">
-        <section className="bg-white w-[85%] h-[90%] rounded-2xl">
+      <div className=" min-w-[30%] bg-main-800 flex items-center justify-center my-5 md:my-0">
+        <section className="bg-white w-[99%] md:w-[74%] h-[93%] rounded-2xl">
           <RightCartDetails />
         </section>
       </div>

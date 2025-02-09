@@ -1,3 +1,4 @@
+import { CartContext } from "@/app/contexts/cart-context";
 import { PetFoodContext } from "@/app/contexts/petFood-context";
 import { ScrollContext } from "@/app/contexts/scrollbar-context";
 import { useContext } from "react";
@@ -20,5 +21,13 @@ export function usePetDataContext() {
     );
   }
 
+  return context;
+}
+
+export function useCartContext() {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error("useCart must be used within a CartContextProvider");
+  }
   return context;
 }

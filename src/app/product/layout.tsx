@@ -5,6 +5,7 @@ import MenuNav from "@/components/menunav";
 import { Separator } from "@/components/ui/separator";
 import ScrollContextProvider from "@/app/contexts/scrollbar-context";
 import Footer from "@/components/footer";
+import CartContextProvider from "../contexts/cart-context";
 
 export const metadata: Metadata = {
   title: "Silvidar - Produse",

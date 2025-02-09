@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import { Roboto, Inter } from "@next/font/google";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import { useCartContext } from "@/lib/hooks";
 
 const roboto = Inter({
   subsets: ["latin"],
@@ -10,6 +12,7 @@ const roboto = Inter({
 });
 
 export default function ImageProductSection({ data }: { data: TPetFoodData }) {
+  const { addCartData } = useCartContext();
   return (
     <div className="w-full h-full flex flex-col justify-start">
       {/* <h1 className={`${roboto.className} text-lg mt-5`}>Poza Produs</h1> */}
@@ -23,7 +26,10 @@ export default function ImageProductSection({ data }: { data: TPetFoodData }) {
         layout="responsive" // Makes the image responsive
         objectFit="cover"
       />
-      <Button className="mt-5 relative rounded-[5px] text-main-600 bg-main-500 hover:bg-main-500/80">
+      <Button
+        onClick={() => addCartData(data)}
+        className="mt-5 relative rounded-[5px] text-main-600 bg-main-500 hover:bg-main-500/80"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

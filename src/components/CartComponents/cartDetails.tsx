@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { Inter, Roboto } from "next/font/google";
+import { useCartContext } from "@/lib/hooks";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -8,6 +10,8 @@ const roboto = Roboto({
 });
 
 export default function CartDetails() {
+  const { cartData } = useCartContext();
+  console.log("THIS IS CARTDATA:::::::", cartData);
   return (
     <section className="bg-white w-[99%] md:w-[95%] shadow-lg md:rounded-3xl h-[70%] mt-7">
       <div className="flex items-center justify-between gap-10 mt-5">
@@ -34,6 +38,9 @@ export default function CartDetails() {
           </p>
         </div>
       </div>
+      {cartData.map((item) => (
+        <div>{item.name}</div>
+      ))}
     </section>
   );
 }
