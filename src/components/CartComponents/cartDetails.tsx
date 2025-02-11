@@ -2,6 +2,7 @@
 import React from "react";
 import { Inter, Roboto } from "next/font/google";
 import { useCartContext } from "@/lib/hooks";
+import CartItem from "./cart-item";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -13,7 +14,7 @@ export default function CartDetails() {
   const { cartData } = useCartContext();
   console.log("THIS IS CARTDATA:::::::", cartData);
   return (
-    <section className="bg-white w-[99%] md:w-[95%] shadow-lg md:rounded-3xl h-[70%] mt-7">
+    <section className="bg-white overflow-y-auto w-[99%] md:w-[95%] shadow-lg md:rounded-3xl  h-[586px] mt-7">
       <div className="flex items-center justify-between gap-10 mt-5">
         <p
           className={`${roboto.className} self-start text-sm md:text-xl text-main-600 mt-2 pl-4 md:pl-7`}
@@ -39,7 +40,7 @@ export default function CartDetails() {
         </div>
       </div>
       {cartData.map((item) => (
-        <div>{item.name}</div>
+        <CartItem key={item.id} data={item} />
       ))}
     </section>
   );

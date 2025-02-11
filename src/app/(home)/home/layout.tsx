@@ -19,15 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
+    <div lang="en">
+      <div>
         <ScrollContextProvider>
           <MenuNav />
 
           {children}
           <Separator className="absolute top-8 mt-9 w-[97%] ml-[5px] lg:ml-5 bg-zinc-200" />
         </ScrollContextProvider>
-      </body>
-    </html>
+      </div>
+    </div>
   );
 }

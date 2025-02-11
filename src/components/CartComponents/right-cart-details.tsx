@@ -75,10 +75,7 @@ export default function RightCartDetails() {
           distinctio minima sed beatae velit, doloribus laborum tempora nostrum
           accusamus quidem, adsad eeq asda petui salam stuki sarna asstr tyter
         </p>
-        <Input
-          className="mt-4 w-[92%] mx-auto"
-          defaultValue={"Introduceti Cod"}
-        />
+        <Input className="mt-4 w-[92%] mx-auto" placeholder="Introduceti cod" />
       </div>
       <Separator className="bg-main-700/20 w-[92%] mx-auto mb-2" />
       <div className="flex-1 h-full flex justify-center ">

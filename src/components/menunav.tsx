@@ -5,31 +5,30 @@ import MenuButtons from "./menu-buttons";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { useEffect, useState } from "react";
-
 import { Roboto } from "@next/font/google";
-import { useScrollContext } from "@/lib/hooks";
+import { useCartContext, useScrollContext } from "@/lib/hooks";
 import { useRouter } from "next/router";
+import { Button } from "./ui/button";
 
 export default function MenuNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isScrolled } = useScrollContext();
+  const { cartData } = useCartContext();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  //Refactor Navbar (Pune un separator ca si border or something ca asa cv nu se poate cuh)
-
   return (
     <NavigationMenu
       className={`sticky text-main-600 top-0 bg-white h-[65px] text-sm flex items-center justify-between min-w-full rounded-bl-md rounded-br-md ${
         isScrolled
-          ? "transition-all ease-in-out bg-white/40  h-[60px] backdrop-blur-md shadow-md text-main-600"
+          ? "transition-all ease-in-out bg-white/40 h-[60px] backdrop-blur-md shadow-md text-main-600"
           : ""
       }`}
     >
       <Image
-        src=" https://cdn.dribbble.com/userupload/14490438/file/original-ded17d5d4d81cebd39b3370426f3665d.jpg"
+        src="https://cdn.dribbble.com/userupload/14490438/file/original-ded17d5d4d81cebd39b3370426f3665d.jpg"
         alt="Preview of PetSoft"
         className={`${isScrolled ? "ml-4" : "ml-4"} rounded-[40%]`}
         width={60}
@@ -37,7 +36,7 @@ export default function MenuNav() {
       />
 
       <button
-        className="absolute right-[140px] block lg:hidden p-2  rounded bg-main-800/30"
+        className="absolute right-[140px] block lg:hidden p-2 rounded bg-main-800/30"
         onClick={toggleMenu}
       >
         <svg
@@ -46,7 +45,7 @@ export default function MenuNav() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6 "
+          className="w-6 h-6"
         >
           <path
             strokeLinecap="round"
@@ -58,12 +57,11 @@ export default function MenuNav() {
 
       <MenuButtons action="dekstop" />
 
-      <div className=" flex items-center gap-[10px] w-50px mr-6">
+      <div className="flex items-center gap-[10px] w-50px mr-6">
         <Link
           className="hover:bg-main-700 hover:text-main-400 rounded-[9px] p-2 transition-colors duration-300 ease-in-out"
           href={"/signup"}
         >
-          {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -82,8 +80,9 @@ export default function MenuNav() {
 
         <Separator className="h-[20px]" orientation="vertical" />
 
+        {/* Cart Icon with Count */}
         <Link
-          className="hover:bg-white hover:text-main-600 rounded-[9px] p-2 transition-colors duration-300 ease-in-out"
+          className="hover:bg-white hover:text-main-600 rounded-[9px] p-2 transition-colors duration-300 ease-in-out relative"
           href={"/cart"}
         >
           <svg
@@ -100,6 +99,13 @@ export default function MenuNav() {
               d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
             />
           </svg>
+
+          {/* Cart Count Badge */}
+          {cartData.length > 0 && (
+            <div className="absolute -top-1 -right-1 bg-main-700 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+              {cartData.length}
+            </div>
+          )}
         </Link>
       </div>
 

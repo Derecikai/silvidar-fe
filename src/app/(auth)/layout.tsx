@@ -16,10 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
+    <div lang="en">
+      <div>
         <AuthLayout>{children}</AuthLayout>
-      </body>
-    </html>
+      </div>
+    </div>
   );
 }

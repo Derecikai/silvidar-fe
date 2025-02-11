@@ -11,3 +11,5 @@ type TPetFoodData = {
   imageUrl: string;
   available: boolean;
 };
+
+type TCartQuantity = TPetFoodData & { cartQuantity: number };

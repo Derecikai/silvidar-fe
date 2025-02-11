@@ -5,8 +5,6 @@ type TContextIn = {
   children: React.ReactNode;
 };
 
-type TCartQuantity = TPetFoodData & { cartQuantity: number };
-
 type TContextOut = {
   cartData: [] | TCartQuantity[];
   addCartData: (data: TPetFoodData) => void;
@@ -36,9 +34,9 @@ export default function CartContextProvider({ children }: TContextIn) {
               }
             : item
         );
-      } else {
+      } else if (data.quantity > 0) {
         return [...prev, { ...data, cartQuantity: 1 }];
-      }
+      } else return prev;
     });
   };
 
