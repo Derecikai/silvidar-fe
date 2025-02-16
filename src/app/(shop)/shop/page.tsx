@@ -8,9 +8,7 @@ import Image from "next/image";
 export default async function page() {
   const response = await fetch("http://localhost:8080/product", {
     method: "GET",
-    headers: {
-      "Cache-Control": "max-age=0",
-    },
+    cache: "no-cache",
   });
   if (!response.ok) {
     throw new Error("Couldn't fetch the dog food data");
