@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, useMemo } from "react";
 
 type TContextIn = {
   children: React.ReactNode;
@@ -10,6 +10,8 @@ type TContextOut = {
   addCartData: (data: TPetFoodData) => void;
   deleteCartData: (data: TPetFoodData) => void;
   isLoading: boolean;
+  increaseCardItem: (id: number, type: string) => void;
+  totalPrice: number;
 };
 
 export const CartContext = createContext<TContextOut | null>(null);
@@ -17,6 +19,15 @@ export const CartContext = createContext<TContextOut | null>(null);
 export default function CartContextProvider({ children }: TContextIn) {
   const [cartData, setCartData] = useState<TCartQuantity[]>([]);
   const [isLoading, setIsLoading] = useState(true); // 👈 Add loading state
+
+  // Calculate total price whenever cartData changes
+  const totalPrice = useMemo(() => {
+    const rawTotal = cartData.reduce((total, item) => {
+      return total + item.price * item.cartQuantity;
+    }, 0);
+
+    return Math.round(rawTotal * 100) / 100;
+  }, [cartData]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -56,9 +67,29 @@ export default function CartContextProvider({ children }: TContextIn) {
     setCartData((prev) => prev.filter((item) => item.id !== data.id));
   };
 
+  const increaseCardItem = (id: number, type: string) => {
+    setCartData((prev) =>
+      prev.map((item) => {
+        if (item.id === id) {
+          const newCartItem =
+            type === "add" ? item.cartQuantity + 1 : item.cartQuantity - 1;
+
+          return { ...item, cartQuantity: newCartItem > 1 ? newCartItem : 1 };
+        } else return item;
+      })
+    );
+  };
+
   return (
     <CartContext.Provider
-      value={{ cartData, addCartData, deleteCartData, isLoading }}
+      value={{
+        cartData,
+        addCartData,
+        deleteCartData,
+        isLoading,
+        increaseCardItem,
+        totalPrice,
+      }}
     >
       {children}
     </CartContext.Provider>

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Inter, Roboto } from "next/font/google";
 import {
@@ -13,6 +14,7 @@ import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
 import ButtonShop2 from "../ButtonShopBig/button-shop2";
 import { Input } from "../ui/input";
+import { useCartContext } from "@/lib/hooks";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -21,8 +23,10 @@ const roboto = Roboto({
 });
 
 export default function RightCartDetails() {
+  const { totalPrice } = useCartContext();
+
   return (
-    <section className="flex flex-col justify-center h-[100%]">
+    <section className="flex flex-col shadow-lg justify-center h-[100%]">
       <div className="flex flex-1 flex-col justify-center gap-4">
         <h1 className={`${roboto.className} text-xl p-4`}>
           Selectează Locația
@@ -59,7 +63,7 @@ export default function RightCartDetails() {
           </SelectContent>
         </Select>
 
-        <Button className="w-[92%] mx-auto mt-2 rounded-xl ">
+        <Button className="w-[92%] mx-auto mt-2 rounded-xl bg-main-600">
           Completeaza Data
         </Button>
       </div>
@@ -79,20 +83,29 @@ export default function RightCartDetails() {
       </div>
       <Separator className="bg-main-700/20 w-[92%] mx-auto mb-2" />
       <div className="flex-1 h-full flex justify-center ">
-        <div className="h-[94%] w-[94%] mt-4 md:mt-0 bg-main-300 p-3 rounded-md">
-          <h1 className={`${roboto.className} text-xl pt-4 mb-3`}>
+        <div className="h-[96%] w-[94%] mt-4 md:mt-0 bg-main-600 p-3 rounded-md">
+          <h1
+            className={`${roboto.className} text-xl  text-main-800 pt-4 mb-3`}
+          >
             Cart Total
           </h1>
           <ul>
-            <li className={`${roboto.className} text-sm text-main-600/85 mb-2`}>
-              Cos Subtotal
-            </li>
-            <li className={`${roboto.className} text-sm text-main-600/85 mb-2`}>
-              Discount
-            </li>
-            <li className={`${roboto.className} text-sm text-main-600/85 mb-2`}>
+            <li className={`${roboto.className} text-sm text-main-800/85 mb-2`}>
               Taxa pe impozit
             </li>
+            <li className={`${roboto.className} text-sm text-main-800/85 mb-2`}>
+              Discount
+            </li>
+            <div className="flex justify-between items-center">
+              <li
+                className={`${roboto.className} text-sm text-main-800/85 mb-2`}
+              >
+                Cos Subtotal
+              </li>
+              <p className={`text-base ${roboto.className} text-main-800 mb-2`}>
+                {totalPrice} RON
+              </p>
+            </div>
           </ul>
           <Button className="w-[100%] mx-auto  mt-2 p-2 bg-main-800 hover:bg-main-800/85 text-main-700">
             Continuă

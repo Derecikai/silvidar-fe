@@ -4,6 +4,8 @@ import { Inter } from "@next/font/google";
 import CartDetails from "@/components/CartComponents/cartDetails";
 import RightCartDetails from "@/components/CartComponents/right-cart-details";
 import { useCartContext } from "@/lib/hooks";
+import { Separator } from "@/components/ui/separator";
+import CartSteps from "@/components/cartsteps";
 
 const roboto = Inter({
   subsets: ["latin"],
@@ -16,17 +18,24 @@ export default function page() {
   return (
     <div className="w-[100%] min-h-screen flex flex-col md:flex-row">
       <div className="flex flex-col items-center min-w-[70%] bg-main-800">
-        <h1 className={`${roboto.className} self-start pl-7 pt-7 text-3xl`}>
-          Coșul Dumneavoastră
-        </h1>
-        <p
-          className={`${roboto.className} self-start text-xl text-main-700/60 mt-2 pl-7`}
-        >
-          <span className="text-main-600/70 font-bold">
-            {cartData.length} Produse
-          </span>{" "}
-          in inventar
-        </p>
+        {/* Top Part */}
+        <div className="flex items-center md:justify-between w-[95%] flex-col gap-[1rem] md:flex-row ">
+          <div className="w-[100%] md:w-[50%] ">
+            <h1 className={`${roboto.className} text-2xl pt-7 md:text-3xl`}>
+              Coșul Dumneavoastră
+            </h1>
+
+            <p
+              className={`${roboto.className} text-lg md:text-xl text-main-700/60 `}
+            >
+              <span className="text-main-600/70 font-bold">
+                {cartData.length} Produse
+              </span>{" "}
+              in inventar
+            </p>
+          </div>
+          <CartSteps />
+        </div>
         <CartDetails />
       </div>
       <div className=" min-w-[30%] bg-main-800 flex items-center justify-center my-5 md:my-0">
