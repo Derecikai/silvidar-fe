@@ -22,7 +22,7 @@ export default function page() {
         <div className="flex items-center md:justify-between w-[95%] flex-col gap-[1rem] md:flex-row ">
           <div className="w-[100%] md:w-[50%] ">
             <h1 className={`${roboto.className} text-2xl pt-7 md:text-3xl`}>
-              Coșul Dumneavoastră
+              Coșul dumneavoastră
             </h1>
 
             <p

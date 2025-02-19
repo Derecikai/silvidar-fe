@@ -12,9 +12,9 @@ const roboto = Inter({
 });
 export default function CartSteps() {
   return (
-    <div className=" flex items-center w-[100%] md:w-[50%]   mx-auto pt-10">
+    <div className=" flex items-center w-[100%] md:w-[50%] justify-center  mx-auto pt-2 md:pt-10">
       <button
-        className={`${roboto.className} w-[47px] h-[47px] text-main-800 border-main-700/20 border bg-main-500 rounded-[50%] cursor-default`}
+        className={`${roboto.className} w-[47px] h-[47px] text-main-800 border-main-700/20 border bg-blue-600/80 rounded-[50%] cursor-default`}
       >
         1
       </button>

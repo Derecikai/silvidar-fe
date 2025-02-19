@@ -83,7 +83,7 @@ export default function RightCartDetails() {
       </div>
       <Separator className="bg-main-700/20 w-[92%] mx-auto mb-2" />
       <div className="flex-1 h-full flex justify-center ">
-        <div className="h-[96%] w-[94%] mt-4 md:mt-0 bg-main-600 p-3 rounded-md">
+        <div className="h-[96%] w-[94%] mt-4 md:mt-0 bg-blue-600/80 p-3 pb-4 rounded-md">
           <h1
             className={`${roboto.className} text-xl  text-main-800 pt-4 mb-3`}
           >
@@ -102,7 +102,7 @@ export default function RightCartDetails() {
               >
                 Cos Subtotal
               </li>
-              <p className={`text-base ${roboto.className} text-main-800 mb-2`}>
+              <p className={`text-lg ${roboto.className} text-main-800 mb-2`}>
                 {totalPrice} RON
               </p>
             </div>
