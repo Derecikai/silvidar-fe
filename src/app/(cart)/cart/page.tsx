@@ -39,7 +39,7 @@ export default function page() {
         <CartDetails />
       </div>
       <div className=" min-w-[30%] bg-main-800 flex items-center justify-center my-5 md:my-0">
-        <section className="bg-white w-[99%] md:w-[74%] h-[93%] rounded-2xl">
+        <section className="bg-white w-[99%] md:w-[80%] lg:w-[74%] h-[93%] rounded-2xl">
           <RightCartDetails />
         </section>
       </div>
