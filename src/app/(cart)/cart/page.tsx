@@ -16,11 +16,11 @@ const roboto = Inter({
 export default function page() {
   const { cartData } = useCartContext();
   return (
-    <div className="w-[100%] min-h-screen flex flex-col md:flex-row">
+    <div className="w-[100%]  min-h-screen flex flex-col lg:flex-row">
       <div className="flex flex-col items-center min-w-[70%] bg-main-800">
         {/* Top Part */}
         <div className="flex items-center md:justify-between w-[95%] flex-col gap-[1rem] md:flex-row ">
-          <div className="w-[100%] md:w-[50%] ">
+          <div className="w-[100%] md:w-[50%] ml-2 md:ml-0 lg:md-0">
             <h1 className={`${roboto.className} text-2xl pt-7 md:text-3xl`}>
               Coșul dumneavoastră
             </h1>
@@ -38,8 +38,8 @@ export default function page() {
         </div>
         <CartDetails />
       </div>
-      <div className=" min-w-[30%] bg-main-800 flex items-center justify-center my-5 md:my-0">
-        <section className="bg-white w-[99%] md:w-[80%] lg:w-[74%] h-[93%] rounded-2xl">
+      <div className=" min-w-[100%] lg:min-w-[30%] bg-main-800 flex items-center justify-center my-5 md:my-0">
+        <section className="bg-white  w-[100%] lg:w-[74%] h-[93%] rounded-2xl">
           <RightCartDetails />
         </section>
       </div>

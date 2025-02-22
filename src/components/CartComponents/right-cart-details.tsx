@@ -32,7 +32,7 @@ export default function RightCartDetails() {
           Selectează Locația
         </h1>
         <Select>
-          <SelectTrigger className="w-[92%] mx-auto rounded-xl border-none">
+          <SelectTrigger className="w-[92%] mx-auto rounded-sm border-none">
             <SelectValue placeholder="Alege firma" />
           </SelectTrigger>
           <SelectContent>
@@ -48,7 +48,7 @@ export default function RightCartDetails() {
         </Select>
 
         <Select>
-          <SelectTrigger className="w-[92%] mx-auto rounded-xl border-none">
+          <SelectTrigger className="w-[92%] mx-auto rounded-sm border-none">
             <SelectValue placeholder="Alege firma" />
           </SelectTrigger>
           <SelectContent>
@@ -63,7 +63,7 @@ export default function RightCartDetails() {
           </SelectContent>
         </Select>
 
-        <Button className="w-[92%] mx-auto mt-2 rounded-xl bg-main-600">
+        <Button className="w-[92%] mx-auto mt-2 rounded-sm bg-main-600">
           Completeaza Data
         </Button>
       </div>
@@ -107,7 +107,7 @@ export default function RightCartDetails() {
               </p>
             </div>
           </ul>
-          <Button className="w-[100%] mx-auto  mt-2 p-2 bg-main-800 hover:bg-main-800/85 text-main-700">
+          <Button className="w-[100%] rounded-sm mx-auto  mt-2 p-2 bg-main-800 hover:bg-main-800/85 text-main-700">
             Continuă
           </Button>
         </div>

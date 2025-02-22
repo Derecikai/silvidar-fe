@@ -102,8 +102,11 @@ export default function MenuNav() {
 
           {/* Cart Count Badge */}
           {cartData.length > 0 && (
-            <div className="absolute -top-1 -right-1 bg-main-700 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
-              {cartData.length}
+            <div className="absolute -top-1 -right-1  text-main-600 rounded-full w-4 h-4 flex items-center justify-center text-xs">
+              <div className="absolute top-[8px] right-[10px] w-[9px] rounded-[50%] h-[9px] bg-blue-600/80"></div>
+              <p className="absolute top-[14px] right-[1px] text-base">
+                {cartData.length}
+              </p>
             </div>
           )}
         </Link>

@@ -18,13 +18,13 @@ export default function CartSteps() {
       >
         1
       </button>
-      <Separator className="w-[30%] md:w-[35%] bg-main-700/40" />
+      <Separator className="w-[27%] md:w-[35%] bg-main-700/40" />
       <button
         className={`${roboto.className} w-[47px] h-[47px] text-main-700 border-main-700/20 border bg-white rounded-[50%] cursor-default`}
       >
         2
       </button>
-      <Separator className="w-[30%] md:w-[35%] bg-main-700/40" />
+      <Separator className="w-[27%] md:w-[35%] bg-main-700/40" />
       <button
         className={`${roboto.className} w-[47px] h-[47px] text-main-700 border-main-700/20 border bg-white rounded-[50%] cursor-default`}
       >
