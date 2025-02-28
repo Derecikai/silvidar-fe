@@ -4,6 +4,7 @@ import { Roboto, Inter } from "@next/font/google";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { useCartContext } from "@/lib/hooks";
+import { toast } from "sonner";
 
 const roboto = Inter({
   subsets: ["latin"],
@@ -27,7 +28,16 @@ export default function ImageProductSection({ data }: { data: TPetFoodData }) {
         objectFit="cover"
       />
       <Button
-        onClick={() => addCartData(data)}
+        onClick={() => {
+          addCartData(data);
+          toast("Produsul a fost adaugat in cos", {
+            description: "Sunday, December 03, 2023 at 9:00 AM",
+            action: {
+              label: "Undo",
+              onClick: () => console.log("Undo"),
+            },
+          });
+        }}
         className="mt-5 relative rounded-[5px] text-main-600 bg-main-500 hover:bg-main-500/80"
       >
         <svg

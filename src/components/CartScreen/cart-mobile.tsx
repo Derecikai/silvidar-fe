@@ -5,11 +5,11 @@ type TCartMobile = {
   data: TCartQuantity;
 };
 
-import { Roboto } from "next/font/google";
+import { Roboto, Source_Sans_3 } from "next/font/google";
 
 import { useCartContext } from "@/lib/hooks";
 
-const roboto = Roboto({
+const roboto = Source_Sans_3({
   subsets: ["latin"],
   weight: ["500"],
   style: ["normal"],
@@ -31,9 +31,9 @@ export default function CartMobile({ data }: TCartMobile) {
           objectFit="cover"
         />
         <div
-          className={`${roboto.className} absolute flex items-center justify-center text-xs text-white bottom-12 md:bottom-16 w-[70%] h-[15%] rounded-tr-md rounded-br-md bg-main-500 backdrop-blur-md`}
+          className={`${roboto.className} absolute flex items-center justify-center text-sm text-white bottom-12 md:bottom-16 w-[70%] h-[15%] rounded-tr-md rounded-br-md bg-zinc-900 backdrop-blur-md`}
         >
-          <p className="line-height: 1rem text-[11px]">-15% EXTRA</p>
+          <p className="line-height: 1rem text-[11px] md:text-lg">-15% EXTRA</p>
         </div>
         <div className="flex justify-between items-center border-main-700/30 border rounded-md min-w-[100%] h-[20%] mt-2">
           <button
@@ -44,7 +44,9 @@ export default function CartMobile({ data }: TCartMobile) {
           >
             <p className="pl-2 pb-2 text-xl">-</p>
           </button>
-          <p className={`${roboto.className} text-sm md:text-lg text-main-600`}>
+          <p
+            className={`${roboto.className} text-base md:text-lg text-main-600`}
+          >
             {data.cartQuantity}
           </p>
           <button
@@ -58,14 +60,14 @@ export default function CartMobile({ data }: TCartMobile) {
         </div>
       </div>
       <div className="pt-4 ml-1 min-w-[37%] max-w-[37%] ">
-        <p className={`${roboto.className} text-xs md:base text-main-700/75`}>
+        <p className={`${roboto.className} text-sm md:base text-main-700/75`}>
           {data.animalType
             .toUpperCase()
             .replace(/_/g, " ")
             .replace(/\b\w/g, (char) => char.toUpperCase())}
         </p>
         <p
-          className={`${roboto.className} text-base md:text-lg max-w-[190px] text-main-600`}
+          className={`${roboto.className} text-lg md:text-base max-w-[190px] text-main-600`}
         >
           {data.name}
         </p>
@@ -82,7 +84,7 @@ export default function CartMobile({ data }: TCartMobile) {
       </div>
       <div className=" flex items-end justify-end  w-[30%]">
         <p
-          className={`${roboto.className} mt-20 text-lg  pb-1 pr-1 text-blue-600/80`}
+          className={`${roboto.className} mt-20 text-xl  pb-1 pr-1 text-blue-600/80`}
         >
           {" "}
           {data.price * data.cartQuantity} RON

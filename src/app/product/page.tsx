@@ -4,6 +4,7 @@ import AddCart from "@/components/addCart";
 import ImageProductSection from "@/components/Product/image-product-section";
 import ProductDetails from "@/components/Product/product-details";
 import PricesArea from "@/components/Product/price-area";
+import { Toaster } from "@/components/ui/sooner";
 
 export default async function page({
   searchParams,
@@ -38,6 +39,7 @@ export default async function page({
       <div className="md:col-start-2 md:col-end-4 bg-white p-4 rounded-lg h-[100%]">
         <PricesArea data={ProductData} />
       </div>
+      <Toaster />
     </div>
     // <div className="w-full h-screen bg-white">
     //   <div className="h-[100%] flex flex-col lg:flex-row mt-2 rounded-md w-[90%] m-auto bg-main-800">

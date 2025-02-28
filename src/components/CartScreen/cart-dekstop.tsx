@@ -1,13 +1,13 @@
 "use client";
-import { Roboto } from "next/font/google";
+import { Roboto, Source_Sans_3 } from "next/font/google";
 import Image from "next/image";
 import React from "react";
 import { useCartContext } from "@/lib/hooks";
 
-const roboto = Roboto({
+const roboto = Source_Sans_3({
   subsets: ["latin"],
-  weight: ["500"],
-  style: ["normal"],
+  weight: ["500"], // Add weights as needed
+  style: ["normal"], // Add styles as needed
 });
 
 type TCartItem = {
@@ -34,7 +34,7 @@ export default function CartDekstop({ data }: TCartItem) {
 
         <div className="flex flex-col w-[100%] ml-3">
           <p
-            className={`${roboto.className} text-xs md:text-sm text-main-700/75`}
+            className={`${roboto.className} text-xs md:text-base text-main-700/75`}
           >
             {data.animalType
               .toUpperCase()
@@ -42,7 +42,7 @@ export default function CartDekstop({ data }: TCartItem) {
               .replace(/\b\w/g, (char) => char.toUpperCase())}
           </p>
           <p
-            className={`${roboto.className} text-xs md:text-base mt-1 min-w-[90px] text-main-600`}
+            className={`${roboto.className} text-xs md:text-lg mt-1 min-w-[90px] text-main-600`}
           >
             {data.name}
           </p>
@@ -51,7 +51,7 @@ export default function CartDekstop({ data }: TCartItem) {
 
       {/* Slate Background Element (Preț, Cantitate, Preț Final Section) */}
       <div className="flex items-center min-w-[20%]  md:min-w-[47%] md:max-w-[45%] gap-14 md:mx-auto md:justify-between md:gap-15">
-        <p className={`${roboto.className} text-sm md:text-lg text-main-600`}>
+        <p className={`${roboto.className} text-sm md:text-xl text-main-600`}>
           {data.price} RON
         </p>
         <div className="flex items-center ">
@@ -63,7 +63,7 @@ export default function CartDekstop({ data }: TCartItem) {
           >
             -
           </button>
-          <p className={`${roboto.className} text-sm md:text-lg text-main-600`}>
+          <p className={`${roboto.className} text-sm md:text-xl text-main-600`}>
             {data.cartQuantity}
           </p>
           <button
@@ -76,7 +76,7 @@ export default function CartDekstop({ data }: TCartItem) {
           </button>
         </div>
         <p
-          className={`${roboto.className} text-sm md:text-lg min-w-[100px] text-blue-600/80`}
+          className={`${roboto.className} text-sm md:text-xl min-w-[100px] text-blue-600/80`}
         >
           {data.price * data.cartQuantity} RON
         </p>

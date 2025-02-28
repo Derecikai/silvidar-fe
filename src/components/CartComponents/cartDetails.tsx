@@ -1,11 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Inter, Roboto } from "next/font/google";
+import { Inter, Roboto, Source_Sans_3 } from "next/font/google";
 import { useCartContext } from "@/lib/hooks";
 import CartItem from "./cart-item";
 import { useMediaQuery } from "react-responsive";
+import "../../styles/globals.css";
 
-const roboto = Roboto({
+const roboto = Source_Sans_3({
   subsets: ["latin"],
   weight: ["500"], // Add weights as needed
   style: ["normal"], // Add styles as needed
@@ -24,12 +25,12 @@ export default function CartDetails() {
   console.log("THIS IS CARTDATA:::::::", cartData);
 
   return (
-    <section className="overflow-y-auto w-[99%] md:w-[95%] shadow-lg md:rounded-3xl h-[400px] md:h-[526px] mt-7">
+    <section className=" custom-scrollbar overflow-y-auto w-[99%] md:w-[95%] shadow-lg md:rounded-3xl h-[400px] md:h-[526px] mt-7">
       {!isMobile && (
-        <div className="flex items-center bg-slate-300/30  min-h-[12%] rounded-tr-md rounded-tl-md w-[100%] mt-5 px-3  md:mx-auto justify-between gap-10">
+        <div className="flex items-center bg-slate-300/30  min-h-[12%] rounded-tr-md rounded-tl-md w-[100%] px-3  md:mx-auto justify-between gap-10">
           {/* AICI SUS */}
           <p
-            className={`${roboto.className} text-sm md:w-[40%]  md:text-xl text-main-600 mt-2 `}
+            className={`${roboto.className} text-sm md:w-[40%]  md:text-2xl text-main-600 mt-2 `}
           >
             Produs
           </p>
