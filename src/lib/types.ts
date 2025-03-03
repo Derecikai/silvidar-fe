@@ -13,3 +13,7 @@ type TPetFoodData = {
 };
 
 type TCartQuantity = TPetFoodData & { cartQuantity: number };
+
+type TAuthResponse = {
+  token: "string";
+};
