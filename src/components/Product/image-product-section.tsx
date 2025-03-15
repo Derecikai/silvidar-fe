@@ -13,6 +13,18 @@ const roboto = Inter({
 });
 
 export default function ImageProductSection({ data }: { data: TPetFoodData }) {
+  function formatDate(date: Date) {
+    return date.toLocaleString("en-US", {
+      weekday: "long",
+      month: "long",
+      day: "2-digit",
+      year: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
+  }
+
   const { addCartData } = useCartContext();
   return (
     <div className="w-full h-full flex flex-col justify-start">
@@ -30,8 +42,9 @@ export default function ImageProductSection({ data }: { data: TPetFoodData }) {
       <Button
         onClick={() => {
           addCartData(data);
+          const now = new Date();
           toast("Produsul a fost adaugat in cos", {
-            description: "Sunday, December 03, 2023 at 9:00 AM",
+            description: formatDate(now),
             action: {
               label: "Undo",
               onClick: () => console.log("Undo"),

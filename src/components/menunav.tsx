@@ -5,19 +5,24 @@ import MenuButtons from "./menu-buttons";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { useEffect, useState } from "react";
-import { Roboto } from "@next/font/google";
-import { useCartContext, useScrollContext } from "@/lib/hooks";
-import { useRouter } from "next/router";
-import { Button } from "./ui/button";
+import {
+  useAccountContext,
+  useCartContext,
+  useScrollContext,
+} from "@/lib/hooks";
 
 export default function MenuNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isScrolled } = useScrollContext();
   const { cartData } = useCartContext();
-
+  const { isAuth, isLoading } = useAccountContext();
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <NavigationMenu
@@ -59,8 +64,8 @@ export default function MenuNav() {
 
       <div className="flex items-center gap-[10px] w-50px mr-6">
         <Link
-          className="hover:bg-main-700 hover:text-main-400 rounded-[9px] p-2 transition-colors duration-300 ease-in-out"
-          href={"/signup"}
+          className="hover:bg-main-700 hover:text-main-400 rounded-[9px] p-2 transition-colors duration-300 ease-in-out relative"
+          href={`${isAuth ? "/profile" : "/signup"}`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -76,6 +81,12 @@ export default function MenuNav() {
               d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
             />
           </svg>
+          {isAuth && (
+            <div className="absolute -top-1 -right-1  text-main-600 rounded-full w-4 h-4 flex items-center justify-center text-xs">
+              <div className="absolute top-[8px] right-[10px] w-[9px] rounded-[50%] h-[9px] bg-rose-600/80"></div>
+              <p className="absolute top-[14px] right-[1px] text-base"></p>
+            </div>
+          )}
         </Link>
 
         <Separator className="h-[20px]" orientation="vertical" />

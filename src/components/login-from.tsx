@@ -10,6 +10,8 @@ import { Separator } from "./ui/separator";
 import { loginFormSchema, TloginFormSchema } from "@/lib/validations";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useAccountContext } from "@/lib/hooks";
+import { useRouter } from "next/navigation";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -18,6 +20,8 @@ const roboto = Roboto({
 });
 
 export default function LoginForm() {
+  const { updateStatusAuth } = useAccountContext();
+  const router = useRouter();
   const {
     register,
     formState: { errors },
@@ -40,7 +44,9 @@ export default function LoginForm() {
         throw new Error("Login failed");
       } else {
         const result: TAuthResponse = await response.json();
-        console.log("Login Succsesfull,data is : ", result.token);
+        updateStatusAuth(result.token);
+        // console.log("Login Succsesfull,data is : ", result.token);|
+        router.push("/shop");
       }
     } catch (error) {
       console.log("Error happend", error);
