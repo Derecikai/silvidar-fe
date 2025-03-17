@@ -11,6 +11,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useRouter } from "next/navigation";
+import ProfileTabs from "@/components/PageComponents/tabs";
 
 const flo = Montserrat({
   subsets: ["latin"],
@@ -32,21 +33,21 @@ export default function page() {
     return <p>Hello, you are not logged in</p>;
   }
   return (
-    <section className="h-screen w-[100%] ">
-      <div className=" w-[95%] rounded-md mx-auto mt-4 h-[60%] bg-main-800">
-        <div className="w-[100%] rounded-md h-[45%] bg-gradient-to-t from-main-800 to-main-900/30"></div>
-        <div className=" h-[55%] flex flex-col md:flex-row items-center justify-between gap-10">
-          <section className="flex mb-1 flex-col md:flex-row justify-start ml-4 w-[50%] h-[100%]">
+    <section className="min-h-screen w-[100%] ">
+      <div className=" w-[95%] rounded-md bg-[url('https://cdn.dribbble.com/userupload/18106550/file/original-60454fee4f53fa6dc45adfbab0cc2577.png?format=webp')] bg-cover bg-center mx-auto mt-4 h-[100%] bg-main-800">
+        <div className="w-[100%] rounded-md hidden lg:block h-[150px] "></div>
+        <div className=" h-[55%] bg-main-800 backdrop-blur-md rounded-md flex flex-col lg:flex-row items-center justify-between gap-10">
+          <section className="flex mb-1 flex-col lg:flex-row justify-start ml-4 w-[50%] h-[100%]">
             <Image
               src={
                 "https://cdn.dribbble.com/userupload/21003464/file/still-851c3a0cd8794713ba83c452f244de9f.png?format=webp&resize=640x480&vertical=center"
               }
               alt="profile-image"
-              className="rounded-md"
-              width={290}
-              height={350}
+              className="rounded-[50%]"
+              width={200}
+              height={200}
             />
-            <div className=" mt-2 flex flex-col pl-3 border-l border-l-main-700/20 p-2 gap-4 ml-3 h-[90%]">
+            <div className=" mt-2  flex flex-col pl-3 border-l border-l-main-700/20 p-2 gap-4 ml-3 min-h-[140%]">
               <div className="flex gap-2">
                 <h1 className={`${flo.className} text-3xl text-main-600`}>
                   Asincronix
@@ -99,7 +100,7 @@ export default function page() {
               >
                 Comenzi in total
               </h1>
-              <p className={`${roboto.className} text-5xl text-main-300 `}>
+              <p className={`${roboto.className} text-5xl text-blue-600/80 `}>
                 452
               </p>
             </div>
@@ -109,14 +110,16 @@ export default function page() {
               >
                 Comenzi Salvate
               </h1>
-              <p className={`${roboto.className} text-5xl text-main-500 `}>
+              <p className={`${roboto.className} text-5xl text-main-300 `}>
                 45
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-main-800 rounded-md h-[40%] w-[95%] mx-auto mt-3"></div>
+      <div className="bg-main-800 mb-10 rounded-md h-[40%] w-[95%] mx-auto mt-3">
+        <ProfileTabs />
+      </div>
     </section>
   );
 }
