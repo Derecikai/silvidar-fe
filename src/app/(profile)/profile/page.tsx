@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/tooltip";
 import { useRouter } from "next/navigation";
 import ProfileTabs from "@/components/PageComponents/tabs";
+import ProfileButton from "@/components/PageComponents/dotsbutton";
 
 const flo = Montserrat({
   subsets: ["latin"],
@@ -34,22 +35,26 @@ export default function page() {
   }
   return (
     <section className="min-h-screen w-[100%] ">
-      <div className=" w-[95%] rounded-md bg-[url('https://cdn.dribbble.com/userupload/18106550/file/original-60454fee4f53fa6dc45adfbab0cc2577.png?format=webp')] bg-cover bg-center mx-auto mt-4 h-[100%] bg-main-800">
+      <div className=" w-[95%] rounded-md bg-[url('https://cdn.dribbble.com/userupload/17866919/file/original-e71ac48a568ab900f71e63b696a1fbd1.png')] bg-cover bg-center mx-auto mt-4 h-[100%] bg-main-800">
         <div className="w-[100%] rounded-md hidden lg:block h-[150px] "></div>
-        <div className=" h-[55%] bg-main-800 backdrop-blur-md rounded-md flex flex-col lg:flex-row items-center justify-between gap-10">
-          <section className="flex mb-1 flex-col lg:flex-row justify-start ml-4 w-[50%] h-[100%]">
-            <Image
-              src={
-                "https://cdn.dribbble.com/userupload/21003464/file/still-851c3a0cd8794713ba83c452f244de9f.png?format=webp&resize=640x480&vertical=center"
-              }
-              alt="profile-image"
-              className="rounded-[50%]"
-              width={200}
-              height={200}
-            />
-            <div className=" mt-2  flex flex-col pl-3 border-l border-l-main-700/20 p-2 gap-4 ml-3 min-h-[140%]">
-              <div className="flex gap-2">
-                <h1 className={`${flo.className} text-3xl text-main-600`}>
+        <div className=" min-h-[200px] bg-main-800 backdrop-blur-md rounded-bl-md rounded-br-md flex flex-col md:flex-row items-center lg:justify-between gap-3 lg:gap-10">
+          <section className="flex  mb-1 flex-col lg:flex-row justify-start ml-4 w-[100%] lg:w-[50%] h-[100%]">
+            <div className=" mt-2 flex flex-col pl-3 border-l border-l-main-700/20 p-2 gap-4 ml-0 lg:ml-4 min-h-[140%]">
+              {" "}
+              <div className="flex items-center mb-3 w-[40%] gap-3">
+                {" "}
+                <Image
+                  src={
+                    "https://cdn.dribbble.com/userupload/14186754/file/original-1dd9f53abd2150102bdf09a3615a80d9.png?format=webp"
+                  }
+                  alt="profile-image"
+                  className="rounded-[50%]  w-[60px] lg:w-[80px] h-[60px] lg:h-[80px]"
+                  width={80}
+                  height={50}
+                />
+                <h1
+                  className={`${flo.className} text-base lg:text-3xl text-main-600`}
+                >
                   Asincronix
                 </h1>
                 <TooltipProvider>
@@ -71,46 +76,49 @@ export default function page() {
                         </svg>
                       </Button>
                     </TooltipTrigger>
-                    <TooltipContent>
+                    <TooltipContent className="bg-blue-600/80">
                       <p>Sunte-ți un client frecvent</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
               </div>
-              <p
-                className={`${roboto.className} text-lg max-w-[300px] text-main-600`}
-              >
-                admin@yahoo.com
-              </p>
-              <div className="mt-auto flex gap-10">
-                <Button className="h-5 ">Editează</Button>
+              <div className="mt-auto flex gap-7">
+                {/* <ProfileButton /> */}
+                <Button className="h-5 bg-main-400 hover:bg-main-400/20 hover:text-main-600/60 text-main-600 border border-main-600/20">
+                  Editează
+                </Button>
+
                 <Button
                   onClick={() => declineStatusAuth()}
-                  className="border border-rose-600 bg-main-800 hover:text-rose-400 hover:bg-main-800 text-rose-600"
+                  className="border text-sm border-rose-600 bg-rose-500/40 hover:text-rose-400 hover:bg-main-800 text-rose-600"
                 >
-                  LogOut
+                  <p className="text-sm">Deconectare</p>
                 </Button>
               </div>
             </div>
           </section>
-          <div className=" h-[100%] gap-6 flex items-center justify-center w-[40%]">
-            <div className=" pr-5 border-r border-r-main-700/30">
+          <div className=" h-[100%] gap-6 p-2 mb-2 lg:p-0 flex items-center border-l lg:border-none border-l-main-600/20 ml-4 justify-start lg:justify-center w-[100%] lg:w-[40%]">
+            <div className="ml-3 pr-5 border-r border-r-main-700/30">
               <h1
-                className={`${flo.className} font-weight-500 text-2xl text-main-600`}
+                className={`${flo.className} font-weight-500 text-base lg:text-lg text-main-600`}
               >
                 Comenzi in total
               </h1>
-              <p className={`${roboto.className} text-5xl text-blue-600/80 `}>
+              <p
+                className={`${roboto.className} text-2xl lg:text-5xl text-blue-600/80 `}
+              >
                 452
               </p>
             </div>
             <div className="pr-2">
               <h1
-                className={`${flo.className} font-weight-500 text-2xl text-main-600`}
+                className={`${flo.className} font-weight-500 text-base lg:text-lg text-main-600`}
               >
-                Comenzi Salvate
+                Produse Salvate
               </h1>
-              <p className={`${roboto.className} text-5xl text-main-300 `}>
+              <p
+                className={`${roboto.className} text-2xl lg:text-5xl text-main-300 `}
+              >
                 45
               </p>
             </div>

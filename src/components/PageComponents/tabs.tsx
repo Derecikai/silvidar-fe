@@ -1,5 +1,10 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+const flo = Montserrat({
+  subsets: ["latin"],
+  weight: ["600"], // Add weights as needed
+  style: ["normal"],
+});
 import {
   Card,
   CardContent,
@@ -10,7 +15,7 @@ import {
 } from "@/components/ui/card";
 const roboto = Source_Sans_3({
   subsets: ["latin"],
-  weight: ["500"], // Add weights as needed
+  weight: ["400"], // Add weights as needed
   style: ["normal"], // Add styles as needed
 });
 
@@ -18,7 +23,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { OrdersProfile } from "./orders";
-import { Source_Sans_3 } from "next/font/google";
+import { Montserrat, Source_Sans_3 } from "next/font/google";
 
 export default function ProfileTabs() {
   return (
@@ -34,9 +39,12 @@ export default function ProfileTabs() {
       <TabsContent value="account">
         <Card className="bg-main-800 text-main-600 border border-main-700/20">
           <CardHeader className="border-b border-main-700/20">
-            <CardTitle>Comenzile dumneavoastră</CardTitle>
-            <CardDescription>
-              Aici puteți vedea comenzile dumneavoastră.
+            <CardTitle className={`${flo.className}`}>
+              Comenzile dumneavoastră
+            </CardTitle>
+            <CardDescription className={`${roboto.className}`}>
+              Aici puteți vedea comenzile dumneavoastră pe o perioada de 90 de
+              zile.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
