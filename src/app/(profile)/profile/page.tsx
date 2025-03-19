@@ -97,7 +97,7 @@ export default function page() {
               </div>
             </div>
           </section>
-          <div className=" h-[100%] gap-6 p-2 mb-2 lg:p-0 flex items-center border-l lg:border-none border-l-main-600/20 ml-4 justify-start lg:justify-center w-[100%] lg:w-[40%]">
+          <div className=" h-[100%] gap-6 p-2 mb-2 lg:p-0 flex items-center border-l md:border-none border-l-main-600/20 ml-4 justify-start lg:justify-center w-[100%] lg:w-[40%]">
             <div className="ml-3 pr-5 border-r border-r-main-700/30">
               <h1
                 className={`${flo.className} font-weight-500 text-base lg:text-lg text-main-600`}
@@ -105,9 +105,9 @@ export default function page() {
                 Comenzi in total
               </h1>
               <p
-                className={`${roboto.className} text-2xl lg:text-5xl text-blue-600/80 `}
+                className={`${roboto.className} text-2xl lg:text-3xl text-blue-600/80 `}
               >
-                452
+                0
               </p>
             </div>
             <div className="pr-2">
@@ -117,9 +117,9 @@ export default function page() {
                 Produse Salvate
               </h1>
               <p
-                className={`${roboto.className} text-2xl lg:text-5xl text-main-300 `}
+                className={`${roboto.className} text-2xl lg:text-3xl text-main-500 `}
               >
-                45
+                0
               </p>
             </div>
           </div>

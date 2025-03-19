@@ -7,9 +7,9 @@ export default function AuthLayout({
 }) {
   return (
     <div
-      className={`text-sm text-stone-900 min-h-screen
+      className={` min-h-screen
         
-          bg-main-500
+          bg-blue-600/80
          backdrop-blur-md flex items-center`}
     >
       {children}

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Button } from "@/components/ui/button";
 const flo = Montserrat({
@@ -24,15 +25,23 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { OrdersProfile } from "./orders";
 import { Montserrat, Source_Sans_3 } from "next/font/google";
+import { Separator } from "../ui/separator";
 
 export default function ProfileTabs() {
   return (
     <Tabs defaultValue="account" className="">
-      <TabsList className="grid bg-main-800 w-full grid-cols-2 ">
-        <TabsTrigger className="border border-main-700/20 " value="account">
+      <TabsList className="flex ml-3 bg-main-800 text-main-600 w-[95%] md:w-[25%] md:gap-3 h-[50px]">
+        <TabsTrigger className="text-base w-[50%] " value="account">
           Comenzi
         </TabsTrigger>
-        <TabsTrigger className="border border-main-700/20" value="password">
+        {/* <Separator
+          orientation="vertical"
+          className="bg-main-600/20 hidden md:block"
+        /> */}
+        <TabsTrigger
+          className="text-base w-[50%] text-main-600"
+          value="password"
+        >
           Salvate
         </TabsTrigger>
       </TabsList>
