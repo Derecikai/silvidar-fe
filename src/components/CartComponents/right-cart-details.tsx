@@ -85,24 +85,22 @@ export default function RightCartDetails() {
       </div>
       <Separator className="bg-main-700/20 w-[92%] mx-auto mb-2" />
       <div className="flex-1 h-full flex justify-center ">
-        <div className="h-[96%] w-[94%] mt-4 md:mt-0 bg-blue-600/80 to  p-3 pb-4 rounded-md">
+        <div className="h-[96%] w-[94%] mt-4 md:mt-0 bg-main-100 to  p-3 pb-4 rounded-md">
           <h1 className={`${flo.className} text-xl  text-main-800 pt-4 mb-3`}>
             Cart Total
           </h1>
           <ul>
-            <li className={`${roboto.className} text-sm text-main-800/85 mb-2`}>
-              Taxa pe impozit
+            <li className={`${roboto.className} text-sm text-main-600 mb-2`}>
+              Taxă pe impozit
             </li>
-            <li className={`${roboto.className} text-sm text-main-800/85 mb-2`}>
+            <li className={`${roboto.className} text-sm text-main-600 mb-2`}>
               Discount
             </li>
             <div className="flex justify-between items-center">
-              <li
-                className={`${roboto.className} text-sm text-main-800/85 mb-2`}
-              >
-                Cos Subtotal
+              <li className={`${roboto.className} text-sm text-main-600 mb-2`}>
+                Coș Subtotal
               </li>
-              <p className={`text-xl ${roboto.className} text-main-800 mb-2`}>
+              <p className={`text-xl ${roboto.className} text-black mb-2`}>
                 {totalPrice} RON
               </p>
             </div>

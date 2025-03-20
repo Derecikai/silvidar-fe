@@ -59,6 +59,36 @@ const invoices = [
     totalAmount: "300.00 RON",
     paymentMethod: "Credit Card",
   },
+  {
+    invoice: "INV003",
+    paymentStatus: "Unpaid",
+    totalAmount: "350.00 RON",
+    paymentMethod: "Bank Transfer",
+  },
+  {
+    invoice: "INV004",
+    paymentStatus: "Paid",
+    totalAmount: "450.00 RON",
+    paymentMethod: "Credit Card",
+  },
+  {
+    invoice: "INV005",
+    paymentStatus: "Paid",
+    totalAmount: "550.00 RON",
+    paymentMethod: "PayPal",
+  },
+  {
+    invoice: "INV006",
+    paymentStatus: "Pending",
+    totalAmount: "200.00 RON",
+    paymentMethod: "Bank Transfer",
+  },
+  {
+    invoice: "INV007",
+    paymentStatus: "Unpaid",
+    totalAmount: "300.00 RON",
+    paymentMethod: "Credit Card",
+  },
 ];
 
 export function OrdersProfile() {
@@ -68,7 +98,7 @@ export function OrdersProfile() {
       <TableHeader>
         <TableRow>
           <TableHead className={`${roboto.className}text-black w-[100px] `}>
-            Id Comandă
+            Id
           </TableHead>
           <TableHead className={`${roboto.className}text-black`}>
             Status

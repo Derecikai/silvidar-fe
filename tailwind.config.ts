@@ -28,7 +28,7 @@ const config: Config = {
           300: "#efefef",
         },
         main: {
-          100: "#52b69a",
+          100: "#57cc99",
           300: "#38d9a9",
           200: "#9d9fe6",
           400: "#ebecfa",

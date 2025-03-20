@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div
       className="flex flex-col xl:flex-row min-h-screen items-center justify-center gap-5 
-  bg-blue-600/80 "
+  bg-main-100 "
     >
       <Image
         src="https://cdn.dribbble.com/userupload/10455821/file/original-9176d60c7bdb636382f8c4f06ee09705.png"

@@ -76,7 +76,7 @@ export default function CartDekstop({ data }: TCartItem) {
           </button>
         </div>
         <p
-          className={`${roboto.className} text-sm md:text-xl min-w-[100px] text-blue-600/80`}
+          className={`${roboto.className} text-sm md:text-xl min-w-[100px] text-main-600`}
         >
           {data.price * data.cartQuantity} RON
         </p>

@@ -84,7 +84,7 @@ export default function CartMobile({ data }: TCartMobile) {
       </div>
       <div className=" flex items-end justify-end  w-[30%]">
         <p
-          className={`${roboto.className} mt-20 text-xl  pb-1 pr-1 text-blue-600/80`}
+          className={`${roboto.className} mt-20 text-xl  pb-1 pr-1 text-main-600`}
         >
           {" "}
           {data.price * data.cartQuantity} RON

@@ -39,7 +39,7 @@ export default function page() {
         <div className="w-[100%] rounded-md hidden lg:block h-[150px] "></div>
         <div className=" min-h-[200px] bg-main-800 backdrop-blur-md rounded-bl-md rounded-br-md flex flex-col md:flex-row items-center lg:justify-between gap-3 lg:gap-10">
           <section className="flex  mb-1 flex-col lg:flex-row justify-start ml-4 w-[100%] lg:w-[50%] h-[100%]">
-            <div className=" mt-2 flex flex-col pl-3 border-l border-l-main-700/20 p-2 gap-4 ml-0 lg:ml-4 min-h-[140%]">
+            <div className=" mt-2 flex  flex-col pl-3 border-l border-l-main-700/20 p-2 gap-4 ml-0 lg:ml-4 min-h-[140%]">
               {" "}
               <div className="flex items-center mb-3 w-[40%] gap-3">
                 {" "}
@@ -82,15 +82,15 @@ export default function page() {
                   </Tooltip>
                 </TooltipProvider>
               </div>
-              <div className="mt-auto flex gap-7">
+              <div className="mt-auto flex flex-col md:flex-row gap-7">
                 {/* <ProfileButton /> */}
-                <Button className="h-5 bg-main-400 hover:bg-main-400/20 hover:text-main-600/60 text-main-600 border border-main-600/20">
+                <Button className="h-5 max-w-[30%] bg-main-400 hover:bg-main-400/20 hover:text-main-600/60 text-main-600 border border-main-600/20">
                   Editează
                 </Button>
 
                 <Button
                   onClick={() => declineStatusAuth()}
-                  className="border text-sm border-rose-600 bg-rose-500/40 hover:text-rose-400 hover:bg-main-800 text-rose-600"
+                  className="border max-w-[30%] md:max-w-[100%] text-sm border-rose-600 bg-rose-500/40 hover:text-rose-400 hover:bg-main-800 text-rose-600"
                 >
                   <p className="text-sm">Deconectare</p>
                 </Button>
@@ -105,7 +105,7 @@ export default function page() {
                 Comenzi in total
               </h1>
               <p
-                className={`${roboto.className} text-2xl lg:text-3xl text-blue-600/80 `}
+                className={`${roboto.className} text-2xl lg:text-3xl text-main-100 `}
               >
                 0
               </p>
