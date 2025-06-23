@@ -57,14 +57,6 @@ export default function LoginForm() {
       onSubmit={handleSubmit(onSubmit)}
       className={`${roboto.className} font-sans font-light flex flex-col items-center gap-5 mt-[15px] w-full p-3 lg:p-0 lg:w-[400px] h-full`}
     >
-      <Image
-        src="https://cdn.dribbble.com/userupload/12477296/file/original-88786eb81e1ed071676a6bb59207d481.png?format=webp&resize=640x480"
-        alt="Preview of PetSoft"
-        className={`rounded-2xl`}
-        width={200}
-        height={100}
-      />
-
       <div className="w-full">
         <Label htmlFor="ownerName">Email</Label>
         <Input className="mt-2" id="email" {...register("email")}></Input>

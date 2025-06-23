@@ -41,6 +41,8 @@ const config: Config = {
         secondary: {
           1: "#BCE3F9",
           2: "#FFCA63",
+          3: "#bed2d7",
+          4: "#e9eced",
         },
         tertiary: {
           1: "#D92632",
