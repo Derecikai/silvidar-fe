@@ -15,7 +15,7 @@ export default async function page() {
   }
   const PetFood = await response.json();
   return (
-    <div className="w-[98%] pt-14 mx-auto bg-gradient-to-b from-secondary-3 to-white min-h-screen grid grid-cols-1 lg:grid-cols-5 gap-4 p-4 text-sm text-stone-900">
+    <div className="w-[98%] pt-14 mx-auto bg-main-800 min-h-screen grid grid-cols-1 lg:grid-cols-5 mt-4 gap-4 p-4 text-sm text-stone-900">
       <PetFoodContextProvider data={PetFood}>
         <FilterArea />
         <FilterAreaMobile />

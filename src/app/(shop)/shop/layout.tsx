@@ -19,10 +19,10 @@ export default async function RootLayout({
 }>) {
   return (
     <div lang="en">
-      <div className="bg-gradient-to-b from-secondary-4 to-white ">
+      <div>
         <ScrollContextProvider>
-          <Navbar2 />
-
+          <MenuNav />
+          <Separator className="w-[98%] mx-auto bg-main-700/20" />
           {children}
 
           <Footer />
