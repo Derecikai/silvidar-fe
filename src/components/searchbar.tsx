@@ -13,7 +13,7 @@ export default function Searchbar() {
 
   return (
     <form
-      className={`${roboto.className} border-[2px] focus:border-main-500 hover:border-main-500 bg-main-800 focus:bg-secondary-1 w-[100%]  h-[50px] flex rounded-xl`}
+      className={`${roboto.className} border-[2px] focus:border-main-600 hover:border-main-600 bg-main-800 focus:bg-secondary-1 w-[55%] h-[50px] flex rounded-xl`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
