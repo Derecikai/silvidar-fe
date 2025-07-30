@@ -7,12 +7,19 @@ type TScrollContext = {
 
 type scrollContextExtract = {
   isScrolled: boolean;
+  isBig: boolean;
+  changeLayout: () => void;
 };
 
 export const ScrollContext = createContext<scrollContextExtract | null>(null);
 
 export default function ScrollContextProvider({ children }: TScrollContext) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isBig, setIsBig] = useState(false);
+
+  const changeLayout = () => {
+    setIsBig(!isBig);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +37,8 @@ export default function ScrollContextProvider({ children }: TScrollContext) {
     <ScrollContext.Provider
       value={{
         isScrolled,
+        isBig,
+        changeLayout,
       }}
     >
       {children}

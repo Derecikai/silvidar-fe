@@ -10,7 +10,9 @@ export function useScrollContext() {
   const context = useContext(ScrollContext);
 
   if (!context) {
-    throw new Error("What are you trying to acces is not in the pet context");
+    throw new Error(
+      "What are you trying to acces is not in the Scroll context"
+    );
   }
 
   return context;

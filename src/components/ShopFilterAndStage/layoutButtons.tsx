@@ -3,10 +3,13 @@ import { Columns3, Columns4, Grid2x2, ListFilter } from "lucide-react";
 import { useState } from "react";
 import { Separator } from "../ui/separator";
 import FilterAndSort from "./filterAndSort";
+import { useScrollContext } from "@/lib/hooks";
 
 type TLayoutButton = "big" | "small" | null;
 
 export default function LayoutButtons() {
+  const { changeLayout } = useScrollContext();
+
   const [selectedButton, isSelectedButton] = useState<TLayoutButton>("big");
 
   return (
@@ -19,6 +22,7 @@ export default function LayoutButtons() {
         } `}
         onClick={() => {
           isSelectedButton("big");
+          changeLayout();
         }}
       >
         <Grid2x2 size={21} />
@@ -26,6 +30,7 @@ export default function LayoutButtons() {
       <button
         onClick={() => {
           isSelectedButton("small");
+          changeLayout();
         }}
         className={`${
           selectedButton === "small"
